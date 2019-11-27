@@ -16,10 +16,13 @@ class ApplicationCoordinator: Coordinator {
     init(window: UIWindow) {
         self.window = window
         rootViewController = UINavigationController()
+        rootViewController.view.backgroundColor = .white
         
         let urlSessionProvider = URLSessionProvider()
         let service = Service(sessionProvider: urlSessionProvider)
-        let viewController = ViewController(service: service)
+        let profileDataStore = ProfileDataStore()
+        let healthKitManager = HealthKithService(profileDataStore: profileDataStore)
+        let viewController = ViewController(service: service, healthKitManager: healthKitManager)
         viewController.coordinator = self
 
         rootViewController.pushViewController(viewController, animated: false)

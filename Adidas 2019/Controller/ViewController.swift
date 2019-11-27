@@ -13,28 +13,54 @@ class ViewController: UITableViewController {
     weak var coordinator: ApplicationCoordinator?
     private var activityIndicator: UIActivityIndicatorView!
     private var service: Service!
+    private var healthKitManager: HealthKithService!
     private var items: [ItemElement] = []
+    private var buttonHealthKit: UIButton!
 
-    init(service: Service) {
+    init(service: Service, healthKitManager: HealthKithService) {
         super.init(nibName: nil, bundle: nil)
         
         self.service = service
+        self.healthKitManager = healthKitManager
     }
     
     deinit {
         service = nil
+        healthKitManager = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+ 
         setupActivityIndicator()
         setupTableView()
-        getGoalsFromService()
+        setupButton()
+    }
+    
+    @objc func authorizeHealthKit() {
+        healthKitManager.authorizeHealthKit { [weak self] (authorized, error) in
+            guard authorized else {
+                let message = "Error Health Kit authorization"
+                
+                if let error = error {
+                    print("\(message). Reason: \(error.localizedDescription)")
+                } else {
+                    print(message)
+                }
+                
+                return
+            }
+            
+            print("HealthKit Successfully Authorized.")
+            DispatchQueue.main.async {
+                self?.buttonHealthKit.isHidden = true
+                self?.getGoalsFromService()
+            }
+        }
     }
     
     fileprivate func setupActivityIndicator() {
@@ -48,11 +74,22 @@ class ViewController: UITableViewController {
             activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
     }
     
-
     fileprivate func setupTableView() {
-        
+        tableView.separatorStyle = .none
         tableView.register(GoalTableCell.self)
         tableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    fileprivate func setupButton() {
+        buttonHealthKit = UIButton(type: .roundedRect)
+        buttonHealthKit.setTitle("Authorize health kit", for: .normal)
+        buttonHealthKit.addTarget(self, action: #selector(authorizeHealthKit), for: .touchUpInside)
+        buttonHealthKit.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(buttonHealthKit)
+        NSLayoutConstraint.activate([
+            buttonHealthKit.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            buttonHealthKit.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
     }
     
     fileprivate func getGoalsFromService() {
