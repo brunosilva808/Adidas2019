@@ -1,0 +1,773 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */; };
+		154DF4B2238D3C4C0026EB00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4B1238D3C4C0026EB00 /* ViewController.swift */; };
+		154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B6238D3C4F0026EB00 /* Assets.xcassets */; };
+		154DF4BA238D3C4F0026EB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */; };
+		154DF4C5238D3C4F0026EB00 /* Adidas_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */; };
+		154DF4D0238D3C4F0026EB00 /* Adidas_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */; };
+		154DF4E0238D3C8E0026EB00 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4DE238D3C8E0026EB00 /* ApplicationCoordinator.swift */; };
+		154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4DF238D3C8E0026EB00 /* Coordinator.swift */; };
+		154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */; };
+		154DF4F7238D3E3F0026EB00 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E6238D3E3F0026EB00 /* NetworkResponse.swift */; };
+		154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E7238D3E3F0026EB00 /* HTTPMethod.swift */; };
+		154DF4F9238D3E3F0026EB00 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E8238D3E3F0026EB00 /* Task.swift */; };
+		154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E9238D3E3F0026EB00 /* NetworkError.swift */; };
+		154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4EB238D3E3F0026EB00 /* URLSessionProvider.swift */; };
+		154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4EE238D3E3F0026EB00 /* URLComponentsExtension.swift */; };
+		154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4EF238D3E3F0026EB00 /* URLRequestExtension.swift */; };
+		154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F1238D3E3F0026EB00 /* ServiceProtocol.swift */; };
+		154DF500238D3E3F0026EB00 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F2238D3E3F0026EB00 /* URLSessionProtocol.swift */; };
+		154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F3238D3E3F0026EB00 /* ProviderProtocol.swift */; };
+		154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F5238D3E3F0026EB00 /* AdidasService.swift */; };
+		154DF506238D40D00026EB00 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF505238D40D00026EB00 /* Response.swift */; };
+		154DF509238D41BA0026EB00 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF508238D41BA0026EB00 /* Service.swift */; };
+		154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */; };
+		154DF50E238D7E400026EB00 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */; };
+		154DF511238D7F420026EB00 /* ModelPresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF510238D7F420026EB00 /* ModelPresenterCell.swift */; };
+		154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */; };
+		154DF516238D87070026EB00 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */; };
+		154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF517238D8F1D0026EB00 /* GoalViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		154DF4C1238D3C4F0026EB00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 154DF4A4238D3C4C0026EB00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154DF4AB238D3C4C0026EB00;
+			remoteInfo = "Adidas 2019";
+		};
+		154DF4CC238D3C4F0026EB00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 154DF4A4238D3C4C0026EB00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154DF4AB238D3C4C0026EB00;
+			remoteInfo = "Adidas 2019";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adidas 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		154DF4B1238D3C4C0026EB00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		154DF4B6238D3C4F0026EB00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		154DF4B9238D3C4F0026EB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		154DF4BB238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adidas 2019Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adidas_2019Tests.swift; sourceTree = "<group>"; };
+		154DF4C6238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adidas 2019UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adidas_2019UITests.swift; sourceTree = "<group>"; };
+		154DF4D1238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154DF4DE238D3C8E0026EB00 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		154DF4DF238D3C8E0026EB00 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		154DF4E6238D3E3F0026EB00 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		154DF4E7238D3E3F0026EB00 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		154DF4E8238D3E3F0026EB00 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		154DF4E9238D3E3F0026EB00 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		154DF4EB238D3E3F0026EB00 /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		154DF4EE238D3E3F0026EB00 /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
+		154DF4EF238D3E3F0026EB00 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		154DF4F1238D3E3F0026EB00 /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		154DF4F2238D3E3F0026EB00 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		154DF4F3238D3E3F0026EB00 /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		154DF4F5238D3E3F0026EB00 /* AdidasService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdidasService.swift; sourceTree = "<group>"; };
+		154DF505238D40D00026EB00 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		154DF508238D41BA0026EB00 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableCell.swift; sourceTree = "<group>"; };
+		154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		154DF510238D7F420026EB00 /* ModelPresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenterCell.swift; sourceTree = "<group>"; };
+		154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		154DF517238D8F1D0026EB00 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		154DF4A9238D3C4C0026EB00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4BD238D3C4F0026EB00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4C8238D3C4F0026EB00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		154DF4A3238D3C4C0026EB00 = {
+			isa = PBXGroup;
+			children = (
+				154DF4AE238D3C4C0026EB00 /* Adidas 2019 */,
+				154DF4C3238D3C4F0026EB00 /* Adidas 2019Tests */,
+				154DF4CE238D3C4F0026EB00 /* Adidas 2019UITests */,
+				154DF4AD238D3C4C0026EB00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		154DF4AD238D3C4C0026EB00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */,
+				154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */,
+				154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		154DF4AE238D3C4C0026EB00 /* Adidas 2019 */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */,
+				154DF508238D41BA0026EB00 /* Service.swift */,
+				154DF50C238D7DD90026EB00 /* View */,
+				154DF507238D40DD0026EB00 /* Model */,
+				154DF504238D40630026EB00 /* Controller */,
+				154DF4E3238D3E3F0026EB00 /* Network */,
+				154DF4E2238D3D240026EB00 /* Resources */,
+				154DF503238D3E460026EB00 /* Helper */,
+			);
+			path = "Adidas 2019";
+			sourceTree = "<group>";
+		};
+		154DF4C3238D3C4F0026EB00 /* Adidas 2019Tests */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */,
+				154DF4C6238D3C4F0026EB00 /* Info.plist */,
+			);
+			path = "Adidas 2019Tests";
+			sourceTree = "<group>";
+		};
+		154DF4CE238D3C4F0026EB00 /* Adidas 2019UITests */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */,
+				154DF4D1238D3C4F0026EB00 /* Info.plist */,
+			);
+			path = "Adidas 2019UITests";
+			sourceTree = "<group>";
+		};
+		154DF4DD238D3C8E0026EB00 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4DE238D3C8E0026EB00 /* ApplicationCoordinator.swift */,
+				154DF4DF238D3C8E0026EB00 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		154DF4E2238D3D240026EB00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4B6238D3C4F0026EB00 /* Assets.xcassets */,
+				154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */,
+				154DF4BB238D3C4F0026EB00 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		154DF4E3238D3E3F0026EB00 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4E4238D3E3F0026EB00 /* Enums */,
+				154DF4EA238D3E3F0026EB00 /* Provider */,
+				154DF4ED238D3E3F0026EB00 /* Extensions */,
+				154DF4F0238D3E3F0026EB00 /* Protocols */,
+				154DF4F4238D3E3F0026EB00 /* Services */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		154DF4E4238D3E3F0026EB00 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */,
+				154DF4E6238D3E3F0026EB00 /* NetworkResponse.swift */,
+				154DF4E7238D3E3F0026EB00 /* HTTPMethod.swift */,
+				154DF4E8238D3E3F0026EB00 /* Task.swift */,
+				154DF4E9238D3E3F0026EB00 /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		154DF4EA238D3E3F0026EB00 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4EB238D3E3F0026EB00 /* URLSessionProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		154DF4ED238D3E3F0026EB00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4EE238D3E3F0026EB00 /* URLComponentsExtension.swift */,
+				154DF4EF238D3E3F0026EB00 /* URLRequestExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		154DF4F0238D3E3F0026EB00 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4F1238D3E3F0026EB00 /* ServiceProtocol.swift */,
+				154DF4F2238D3E3F0026EB00 /* URLSessionProtocol.swift */,
+				154DF4F3238D3E3F0026EB00 /* ProviderProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		154DF4F4238D3E3F0026EB00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4F5238D3E3F0026EB00 /* AdidasService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		154DF503238D3E460026EB00 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */,
+				154DF4DD238D3C8E0026EB00 /* Coordinator */,
+				154DF50F238D7E420026EB00 /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		154DF504238D40630026EB00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4B1238D3C4C0026EB00 /* ViewController.swift */,
+				154DF517238D8F1D0026EB00 /* GoalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		154DF507238D40DD0026EB00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				154DF505238D40D00026EB00 /* Response.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		154DF50C238D7DD90026EB00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				154DF512238D7F490026EB00 /* Enum */,
+				154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		154DF50F238D7E420026EB00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */,
+				154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		154DF512238D7F490026EB00 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				154DF510238D7F420026EB00 /* ModelPresenterCell.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		154DF4AB238D3C4C0026EB00 /* Adidas 2019 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154DF4D4238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019" */;
+			buildPhases = (
+				154DF4A8238D3C4C0026EB00 /* Sources */,
+				154DF4A9238D3C4C0026EB00 /* Frameworks */,
+				154DF4AA238D3C4C0026EB00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Adidas 2019";
+			productName = "Adidas 2019";
+			productReference = 154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */;
+			productType = "com.apple.product-type.application";
+		};
+		154DF4BF238D3C4F0026EB00 /* Adidas 2019Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154DF4D7238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019Tests" */;
+			buildPhases = (
+				154DF4BC238D3C4F0026EB00 /* Sources */,
+				154DF4BD238D3C4F0026EB00 /* Frameworks */,
+				154DF4BE238D3C4F0026EB00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154DF4C2238D3C4F0026EB00 /* PBXTargetDependency */,
+			);
+			name = "Adidas 2019Tests";
+			productName = "Adidas 2019Tests";
+			productReference = 154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		154DF4CA238D3C4F0026EB00 /* Adidas 2019UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154DF4DA238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019UITests" */;
+			buildPhases = (
+				154DF4C7238D3C4F0026EB00 /* Sources */,
+				154DF4C8238D3C4F0026EB00 /* Frameworks */,
+				154DF4C9238D3C4F0026EB00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154DF4CD238D3C4F0026EB00 /* PBXTargetDependency */,
+			);
+			name = "Adidas 2019UITests";
+			productName = "Adidas 2019UITests";
+			productReference = 154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		154DF4A4238D3C4C0026EB00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Bruno;
+				TargetAttributes = {
+					154DF4AB238D3C4C0026EB00 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					154DF4BF238D3C4F0026EB00 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 154DF4AB238D3C4C0026EB00;
+					};
+					154DF4CA238D3C4F0026EB00 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 154DF4AB238D3C4C0026EB00;
+					};
+				};
+			};
+			buildConfigurationList = 154DF4A7238D3C4C0026EB00 /* Build configuration list for PBXProject "Adidas 2019" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 154DF4A3238D3C4C0026EB00;
+			productRefGroup = 154DF4AD238D3C4C0026EB00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				154DF4AB238D3C4C0026EB00 /* Adidas 2019 */,
+				154DF4BF238D3C4F0026EB00 /* Adidas 2019Tests */,
+				154DF4CA238D3C4F0026EB00 /* Adidas 2019UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		154DF4AA238D3C4C0026EB00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF4BA238D3C4F0026EB00 /* LaunchScreen.storyboard in Resources */,
+				154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4BE238D3C4F0026EB00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4C9238D3C4F0026EB00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		154DF4A8238D3C4C0026EB00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF500238D3E3F0026EB00 /* URLSessionProtocol.swift in Sources */,
+				154DF511238D7F420026EB00 /* ModelPresenterCell.swift in Sources */,
+				154DF4F9238D3E3F0026EB00 /* Task.swift in Sources */,
+				154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */,
+				154DF506238D40D00026EB00 /* Response.swift in Sources */,
+				154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */,
+				154DF509238D41BA0026EB00 /* Service.swift in Sources */,
+				154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */,
+				154DF4B2238D3C4C0026EB00 /* ViewController.swift in Sources */,
+				154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */,
+				154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */,
+				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
+				154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */,
+				154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */,
+				154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */,
+				154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */,
+				154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */,
+				154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */,
+				154DF4E0238D3C8E0026EB00 /* ApplicationCoordinator.swift in Sources */,
+				154DF516238D87070026EB00 /* ActivityIndicatorManager.swift in Sources */,
+				154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */,
+				154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */,
+				154DF50E238D7E400026EB00 /* UITableView+Dequeue.swift in Sources */,
+				154DF4F7238D3E3F0026EB00 /* NetworkResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4BC238D3C4F0026EB00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF4C5238D3C4F0026EB00 /* Adidas_2019Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4C7238D3C4F0026EB00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF4D0238D3C4F0026EB00 /* Adidas_2019UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		154DF4C2238D3C4F0026EB00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154DF4AB238D3C4C0026EB00 /* Adidas 2019 */;
+			targetProxy = 154DF4C1238D3C4F0026EB00 /* PBXContainerItemProxy */;
+		};
+		154DF4CD238D3C4F0026EB00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154DF4AB238D3C4C0026EB00 /* Adidas 2019 */;
+			targetProxy = 154DF4CC238D3C4F0026EB00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				154DF4B9238D3C4F0026EB00 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		154DF4D2238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		154DF4D3238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		154DF4D5238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		154DF4D6238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		154DF4D8238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adidas 2019.app/Adidas 2019";
+			};
+			name = Debug;
+		};
+		154DF4D9238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adidas 2019.app/Adidas 2019";
+			};
+			name = Release;
+		};
+		154DF4DB238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Adidas 2019";
+			};
+			name = Debug;
+		};
+		154DF4DC238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Adidas 2019";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		154DF4A7238D3C4C0026EB00 /* Build configuration list for PBXProject "Adidas 2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4D2238D3C4F0026EB00 /* Debug */,
+				154DF4D3238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154DF4D4238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4D5238D3C4F0026EB00 /* Debug */,
+				154DF4D6238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154DF4D7238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4D8238D3C4F0026EB00 /* Debug */,
+				154DF4D9238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154DF4DA238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4DB238D3C4F0026EB00 /* Debug */,
+				154DF4DC238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 154DF4A4238D3C4C0026EB00 /* Project object */;
+}
