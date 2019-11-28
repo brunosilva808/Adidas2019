@@ -16,6 +16,36 @@ struct UserHealthProfile {
     var heightInMeters: Double?
     var weightInKilograms: Double?
     
+    var ageAsString: String? {
+        get {
+            if let age = self.age {
+                return "Age: \(age)"
+            } else {
+                return "Age: -"
+            }
+        }
+    }
+    
+    var biologicalSexAsString: String? {
+        get {
+            if let biologicalSex = self.biologicalSex {
+                return "Sex: " + biologicalSex.stringRepresentation
+            } else {
+                return "Sex: -"
+            }
+        }
+    }
+    
+    var bloodTypeAsString: String? {
+        get {
+            if let bloodType = self.bloodType {
+                return "Blood type: " + bloodType.stringRepresentation
+            } else {
+                return "Blood type: -"
+            }
+        }
+    }
+    
     var bodyMassIndex: Double? {
         
         guard let weightInKilograms = weightInKilograms,

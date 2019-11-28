@@ -40,6 +40,9 @@
 		154DF526238EC36C0026EB00 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF525238EC36C0026EB00 /* ProfileDataStore.swift */; };
 		154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF527238EC6580026EB00 /* Date+DateComponents.swift */; };
 		154DF52A238EC9660026EB00 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF529238EC9660026EB00 /* UserHealthProfile.swift */; };
+		154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52B238FD98E0026EB00 /* UserTableHeader.swift */; };
+		154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */; };
+		154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +103,9 @@
 		154DF525238EC36C0026EB00 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
 		154DF527238EC6580026EB00 /* Date+DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateComponents.swift"; sourceTree = "<group>"; };
 		154DF529238EC9660026EB00 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		154DF52B238FD98E0026EB00 /* UserTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableHeader.swift; sourceTree = "<group>"; };
+		154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+StringRepresentation.swift"; sourceTree = "<group>"; };
+		154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+stringRepresentation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,8 +164,8 @@
 				154DF50C238D7DD90026EB00 /* View */,
 				154DF507238D40DD0026EB00 /* Model */,
 				154DF504238D40630026EB00 /* Controller */,
-				154DF520238EA6C10026EB00 /* Service */,
-				154DF503238D3E460026EB00 /* Helper */,
+				154DF520238EA6C10026EB00 /* Services */,
+				154DF503238D3E460026EB00 /* Helpers */,
 				154DF4E2238D3D240026EB00 /* Resources */,
 			);
 			path = "Adidas 2019";
@@ -205,11 +211,11 @@
 		154DF4E3238D3E3F0026EB00 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				154DF4E4238D3E3F0026EB00 /* Enums */,
 				154DF4EA238D3E3F0026EB00 /* Provider */,
+				154DF4F4238D3E3F0026EB00 /* Services */,
+				154DF4E4238D3E3F0026EB00 /* Enums */,
 				154DF4ED238D3E3F0026EB00 /* Extensions */,
 				154DF4F0238D3E3F0026EB00 /* Protocols */,
-				154DF4F4238D3E3F0026EB00 /* Services */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -261,14 +267,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		154DF503238D3E460026EB00 /* Helper */ = {
+		154DF503238D3E460026EB00 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				154DF51F238EA52C0026EB00 /* Manager */,
 				154DF4DD238D3C8E0026EB00 /* Coordinator */,
 				154DF50F238D7E420026EB00 /* Extensions */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		154DF504238D40630026EB00 /* Controller */ = {
@@ -294,6 +300,7 @@
 			children = (
 				154DF512238D7F490026EB00 /* Enum */,
 				154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */,
+				154DF52B238FD98E0026EB00 /* UserTableHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,22 +339,40 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		154DF520238EA6C10026EB00 /* Service */ = {
+		154DF520238EA6C10026EB00 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				154DF521238EA6DA0026EB00 /* HealthKit */,
 				154DF4E3238D3E3F0026EB00 /* Network */,
 			);
-			path = Service;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		154DF521238EA6DA0026EB00 /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
+				154DF530238FE1E90026EB00 /* Service */,
+				154DF52F238FE1A10026EB00 /* Extension */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		154DF52F238FE1A10026EB00 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */,
+				154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		154DF530238FE1E90026EB00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
 				154DF51D238EA1860026EB00 /* HealthKitService.swift */,
 				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
 			);
-			path = HealthKit;
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,9 +520,12 @@
 				154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */,
 				154DF509238D41BA0026EB00 /* Service.swift in Sources */,
 				154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */,
+				154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */,
+				154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */,
 				154DF4B2238D3C4C0026EB00 /* ViewController.swift in Sources */,
 				154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */,
 				154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */,
+				154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */,
 				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
 				154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */,
 				154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */,

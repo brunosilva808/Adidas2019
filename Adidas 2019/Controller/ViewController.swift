@@ -11,11 +11,12 @@ import UIKit
 class ViewController: UITableViewController {
 
     weak var coordinator: ApplicationCoordinator?
-    private var activityIndicator: UIActivityIndicatorView!
     private var service: Service!
     private var healthKitManager: HealthKithService!
     private var items: [ItemElement] = []
     private var buttonHealthKit: UIButton!
+    private var headerTable: UserTableHeader!
+    private var userHealthProfile: UserHealthProfile!
 
     init(service: Service, healthKitManager: HealthKithService) {
         super.init(nibName: nil, bundle: nil)
@@ -27,6 +28,9 @@ class ViewController: UITableViewController {
     deinit {
         service = nil
         healthKitManager = nil
+        headerTable = nil
+        coordinator = nil
+        userHealthProfile = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -36,13 +40,20 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        setupActivityIndicator()
         setupTableView()
         setupButton()
+        getGoalsFromService()
     }
     
+
     @objc func authorizeHealthKit() {
+        
         healthKitManager.authorizeHealthKit { [weak self] (authorized, error) in
+
+            DispatchQueue.main.async {
+                self?.buttonHealthKit.isHidden = true
+            }
+            
             guard authorized else {
                 let message = "Error Health Kit authorization"
                 
@@ -56,28 +67,17 @@ class ViewController: UITableViewController {
             }
             
             print("HealthKit Successfully Authorized.")
-            DispatchQueue.main.async {
-                self?.buttonHealthKit.isHidden = true
-                self?.getGoalsFromService()
-            }
+            self?.getuserAgeSexAndBloodType()
         }
     }
-    
-    fileprivate func setupActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView(style: .gray)
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(activityIndicator)
-        
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
-    }
-    
+
     fileprivate func setupTableView() {
         tableView.separatorStyle = .none
         tableView.register(GoalTableCell.self)
         tableView.rowHeight = UITableView.automaticDimension
+        
+        tableView.registerHeaderFooter(UserTableHeader.self)
+        headerTable = UserTableHeader(reuseIdentifier: "Header")
     }
     
     fileprivate func setupButton() {
@@ -92,15 +92,26 @@ class ViewController: UITableViewController {
             buttonHealthKit.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
     }
     
-    fileprivate func getGoalsFromService() {
+    fileprivate func getuserAgeSexAndBloodType() {
         
-        activityIndicator.startAnimating()
+        healthKitManager.getAgeSexAndBloodType(onSuccess: { [weak self] (userHealthProfile) in
+            DispatchQueue.main.async {
+                self?.headerTable.model = userHealthProfile
+            }
+        }, onError: { (error) in
+            print("Error getting getAgeSexAndBloodType. Reason: \(error.localizedDescription)")
+        }) { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    fileprivate func getGoalsFromService() {
         
         service.getGoals { [weak self] (response) in
             DispatchQueue.main.async {
                 self?.items = response
-                self?.tableView.reloadData()
-                self?.activityIndicator.stopAnimating()
             }
         }
     }
@@ -119,6 +130,14 @@ extension ViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinator?.pushGoalViewController()
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return headerTable
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 60
     }
     
 }

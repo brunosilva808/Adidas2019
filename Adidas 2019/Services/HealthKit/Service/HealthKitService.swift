@@ -61,7 +61,7 @@ final class HealthKithService {
         }
     }
     
-    func getAgeSexAndBloodType(onSuccess: (UserHealthProfile) -> Void, onError: (Error) -> Void) {
+    func getAgeSexAndBloodType(onSuccess: (UserHealthProfile) -> Void, onError: (Error) -> Void, onFinnaly: () -> Void) {
         
         var userHealthProfile: UserHealthProfile = UserHealthProfile()
         
@@ -77,6 +77,8 @@ final class HealthKithService {
 //            self.displayAlert(for: error)
             onError(error)
         }
+        
+        onFinnaly()
     }
 
 }

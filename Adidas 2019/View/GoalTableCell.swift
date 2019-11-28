@@ -46,20 +46,18 @@ class GoalTableCell: UITableViewCell, ModelPresenterCell {
 extension GoalTableCell {
     
     func setupUIComponents() {
+        selectionStyle = .none
+
         labelTitle = UILabel(frame: .zero)
         labelTitle.font = UIFont.boldSystemFont(ofSize: 21)
-        labelTitle.backgroundColor = .red
+//        labelTitle.backgroundColor = .red
         
         labelDescription = UILabel(frame: .zero)
         labelDescription.numberOfLines = 0
-        labelDescription.backgroundColor = .purple
         
         labelGoal = UILabel(frame: .zero)
-        labelGoal.backgroundColor = .orange
         labelPoints = UILabel(frame: .zero)
-        labelPoints.backgroundColor = .brown
         labelThrophy = UILabel(frame: .zero)
-        labelThrophy.backgroundColor = .gray
         
         stackView = UIStackView(arrangedSubviews: [labelTitle, labelDescription, labelGoal, labelPoints, labelThrophy])
         stackView.translatesAutoresizingMaskIntoConstraints = false
