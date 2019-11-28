@@ -22,7 +22,6 @@ class ApplicationCoordinator: Coordinator {
         let service = Service(sessionProvider: urlSessionProvider)
         let profileDataStore = ProfileDataStore()
         let healthKitManager = HealthKithService(profileDataStore: profileDataStore)
-        let dispatchGroup = DispatchGroup()
         let viewController = ViewController(service: service, healthKitManager: healthKitManager)
         viewController.coordinator = self
 

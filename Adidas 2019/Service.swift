@@ -19,10 +19,11 @@ final class Service {
         self.sessionProvider.request(type: Response.self, service: AdidasService.goals) { (response) in
             switch response {
             case let .success(items):
-                print(items)
+                UserDefaults.Adidas.set(array: items.items, key: .goals)
                 completion(items.items)
-            case let .failure(error):
-                print(error)
+            case .failure(_):
+                let items: [ItemElement] = UserDefaults.Adidas.getArray(objectType: ItemElement.self, key: .goals)
+                completion(items)
             }
         }
     }

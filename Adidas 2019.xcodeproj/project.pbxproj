@@ -43,6 +43,7 @@
 		154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52B238FD98E0026EB00 /* UserTableHeader.swift */; };
 		154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */; };
 		154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */; };
+		1553F42223900ED600578131 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F42123900ED500578131 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		154DF52B238FD98E0026EB00 /* UserTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableHeader.swift; sourceTree = "<group>"; };
 		154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+StringRepresentation.swift"; sourceTree = "<group>"; };
 		154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+stringRepresentation.swift"; sourceTree = "<group>"; };
+		1553F42123900ED500578131 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 		154DF503238D3E460026EB00 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1553F42323900ED800578131 /* Utils */,
 				154DF51F238EA52C0026EB00 /* Manager */,
 				154DF4DD238D3C8E0026EB00 /* Coordinator */,
 				154DF50F238D7E420026EB00 /* Extensions */,
@@ -373,6 +376,14 @@
 				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		1553F42323900ED800578131 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1553F42123900ED500578131 /* UserDefaults.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +525,7 @@
 				154DF500238D3E3F0026EB00 /* URLSessionProtocol.swift in Sources */,
 				154DF526238EC36C0026EB00 /* ProfileDataStore.swift in Sources */,
 				154DF511238D7F420026EB00 /* ModelPresenterCell.swift in Sources */,
+				1553F42223900ED600578131 /* UserDefaults.swift in Sources */,
 				154DF4F9238D3E3F0026EB00 /* Task.swift in Sources */,
 				154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */,
 				154DF506238D40D00026EB00 /* Response.swift in Sources */,
