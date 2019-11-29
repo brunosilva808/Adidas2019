@@ -10,12 +10,19 @@ import UIKit
 
 protocol TableViewType {
     func register<T: UITableViewCell>(_ cellClass: T.Type)
+    func registerHeaderFooter<T: UITableViewHeaderFooterView>(_ cellClass: T.Type)
 }
 
 extension UITableViewCell: ReusableView { }
+extension UITableViewHeaderFooterView: ReusableView { }
+
 extension UITableView: TableViewType {
     func register<T: UITableViewCell>(_ cellClass: T.Type) {
         register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
+    }
+
+    public func registerHeaderFooter<T: UITableViewHeaderFooterView>(_ cellClass: T.Type) {
+        register(cellClass, forHeaderFooterViewReuseIdentifier: cellClass.reuseIdentifier)
     }
 }
 
@@ -26,3 +33,4 @@ extension UITableView {
         return cell
     }
 }
+

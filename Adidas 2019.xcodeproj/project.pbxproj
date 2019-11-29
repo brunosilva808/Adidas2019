@@ -35,6 +35,15 @@
 		154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */; };
 		154DF516238D87070026EB00 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */; };
 		154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF517238D8F1D0026EB00 /* GoalViewController.swift */; };
+		154DF51C238EA07C0026EB00 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154DF51B238EA07C0026EB00 /* HealthKit.framework */; };
+		154DF51E238EA1860026EB00 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF51D238EA1860026EB00 /* HealthKitService.swift */; };
+		154DF526238EC36C0026EB00 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF525238EC36C0026EB00 /* ProfileDataStore.swift */; };
+		154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF527238EC6580026EB00 /* Date+DateComponents.swift */; };
+		154DF52A238EC9660026EB00 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF529238EC9660026EB00 /* UserHealthProfile.swift */; };
+		154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52B238FD98E0026EB00 /* UserTableHeader.swift */; };
+		154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */; };
+		154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */; };
+		1553F42223900ED600578131 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F42123900ED500578131 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +98,16 @@
 		154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
 		154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		154DF517238D8F1D0026EB00 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		154DF519238EA07B0026EB00 /* Adidas 2019.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Adidas 2019.entitlements"; sourceTree = "<group>"; };
+		154DF51B238EA07C0026EB00 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		154DF51D238EA1860026EB00 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		154DF525238EC36C0026EB00 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		154DF527238EC6580026EB00 /* Date+DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateComponents.swift"; sourceTree = "<group>"; };
+		154DF529238EC9660026EB00 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		154DF52B238FD98E0026EB00 /* UserTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableHeader.swift; sourceTree = "<group>"; };
+		154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+StringRepresentation.swift"; sourceTree = "<group>"; };
+		154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+stringRepresentation.swift"; sourceTree = "<group>"; };
+		1553F42123900ED500578131 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154DF51C238EA07C0026EB00 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +143,7 @@
 				154DF4C3238D3C4F0026EB00 /* Adidas 2019Tests */,
 				154DF4CE238D3C4F0026EB00 /* Adidas 2019UITests */,
 				154DF4AD238D3C4C0026EB00 /* Products */,
+				154DF51A238EA07C0026EB00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,14 +160,15 @@
 		154DF4AE238D3C4C0026EB00 /* Adidas 2019 */ = {
 			isa = PBXGroup;
 			children = (
+				154DF519238EA07B0026EB00 /* Adidas 2019.entitlements */,
 				154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */,
 				154DF508238D41BA0026EB00 /* Service.swift */,
 				154DF50C238D7DD90026EB00 /* View */,
 				154DF507238D40DD0026EB00 /* Model */,
 				154DF504238D40630026EB00 /* Controller */,
-				154DF4E3238D3E3F0026EB00 /* Network */,
+				154DF520238EA6C10026EB00 /* Services */,
+				154DF503238D3E460026EB00 /* Helpers */,
 				154DF4E2238D3D240026EB00 /* Resources */,
-				154DF503238D3E460026EB00 /* Helper */,
 			);
 			path = "Adidas 2019";
 			sourceTree = "<group>";
@@ -191,11 +213,11 @@
 		154DF4E3238D3E3F0026EB00 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				154DF4E4238D3E3F0026EB00 /* Enums */,
 				154DF4EA238D3E3F0026EB00 /* Provider */,
+				154DF4F4238D3E3F0026EB00 /* Services */,
+				154DF4E4238D3E3F0026EB00 /* Enums */,
 				154DF4ED238D3E3F0026EB00 /* Extensions */,
 				154DF4F0238D3E3F0026EB00 /* Protocols */,
-				154DF4F4238D3E3F0026EB00 /* Services */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -247,14 +269,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		154DF503238D3E460026EB00 /* Helper */ = {
+		154DF503238D3E460026EB00 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */,
+				1553F42323900ED800578131 /* Utils */,
+				154DF51F238EA52C0026EB00 /* Manager */,
 				154DF4DD238D3C8E0026EB00 /* Coordinator */,
 				154DF50F238D7E420026EB00 /* Extensions */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		154DF504238D40630026EB00 /* Controller */ = {
@@ -270,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				154DF505238D40D00026EB00 /* Response.swift */,
+				154DF529238EC9660026EB00 /* UserHealthProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +303,7 @@
 			children = (
 				154DF512238D7F490026EB00 /* Enum */,
 				154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */,
+				154DF52B238FD98E0026EB00 /* UserTableHeader.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -288,6 +313,7 @@
 			children = (
 				154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */,
 				154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */,
+				154DF527238EC6580026EB00 /* Date+DateComponents.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +324,66 @@
 				154DF510238D7F420026EB00 /* ModelPresenterCell.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		154DF51A238EA07C0026EB00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				154DF51B238EA07C0026EB00 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		154DF51F238EA52C0026EB00 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				154DF515238D87070026EB00 /* ActivityIndicatorManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		154DF520238EA6C10026EB00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				154DF521238EA6DA0026EB00 /* HealthKit */,
+				154DF4E3238D3E3F0026EB00 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		154DF521238EA6DA0026EB00 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				154DF530238FE1E90026EB00 /* Service */,
+				154DF52F238FE1A10026EB00 /* Extension */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		154DF52F238FE1A10026EB00 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */,
+				154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		154DF530238FE1E90026EB00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				154DF51D238EA1860026EB00 /* HealthKitService.swift */,
+				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1553F42323900ED800578131 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1553F42123900ED500578131 /* UserDefaults.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +454,11 @@
 				TargetAttributes = {
 					154DF4AB238D3C4C0026EB00 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					154DF4BF238D3C4F0026EB00 = {
 						CreatedOnToolsVersion = 10.1;
@@ -430,24 +521,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154DF52A238EC9660026EB00 /* UserHealthProfile.swift in Sources */,
 				154DF500238D3E3F0026EB00 /* URLSessionProtocol.swift in Sources */,
+				154DF526238EC36C0026EB00 /* ProfileDataStore.swift in Sources */,
 				154DF511238D7F420026EB00 /* ModelPresenterCell.swift in Sources */,
+				1553F42223900ED600578131 /* UserDefaults.swift in Sources */,
 				154DF4F9238D3E3F0026EB00 /* Task.swift in Sources */,
 				154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */,
 				154DF506238D40D00026EB00 /* Response.swift in Sources */,
 				154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */,
 				154DF509238D41BA0026EB00 /* Service.swift in Sources */,
 				154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */,
+				154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */,
+				154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */,
 				154DF4B2238D3C4C0026EB00 /* ViewController.swift in Sources */,
 				154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */,
 				154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */,
+				154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */,
 				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
 				154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */,
 				154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */,
 				154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */,
 				154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */,
 				154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */,
+				154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */,
 				154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */,
+				154DF51E238EA1860026EB00 /* HealthKitService.swift in Sources */,
 				154DF4E0238D3C8E0026EB00 /* ApplicationCoordinator.swift in Sources */,
 				154DF516238D87070026EB00 /* ActivityIndicatorManager.swift in Sources */,
 				154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */,
@@ -620,7 +719,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Adidas 2019/Adidas 2019.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
 				INFOPLIST_FILE = "Adidas 2019/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,7 +738,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Adidas 2019/Adidas 2019.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
 				INFOPLIST_FILE = "Adidas 2019/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
