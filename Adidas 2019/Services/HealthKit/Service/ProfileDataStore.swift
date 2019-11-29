@@ -9,10 +9,14 @@
 import HealthKit
 
 struct ProfileDataStore {
+    
+    private let healthKitStore: HKHealthStore!
+    
+    init(healthKitStore: HKHealthStore) {
+        self.healthKitStore = healthKitStore
+    }
 
     func getAgeSexAndBloodType() throws -> (age: Int, biologicalSex: HKBiologicalSex, bloodType: HKBloodType) {
-            
-        let healthKitStore = HKHealthStore()
             
         do {
             let birthdayComponents =  try healthKitStore.dateOfBirthComponents()
@@ -30,6 +34,28 @@ struct ProfileDataStore {
 
             return (0, unwrappedBiologicalSex, unwrappedBloodType)
         }
+    }
+    
+    func getMostRecentSample(for sampleType: HKSampleType,
+                             completion: @escaping (HKQuantitySample?, Error?) -> Void) {
+        
+        let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast,
+                                                              end: Date(),
+                                                              options: .strictEndDate)
+        
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
+        let limit = 1
+        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDescriptor]) { (query, samples, error) in
+            
+            guard let samples = samples, let mostRecentSample = samples.first as? HKQuantitySample else {
+                completion(nil, error)
+                return
+            }
+            
+            completion(mostRecentSample, nil)
+        }
+        
+        healthKitStore.execute(sampleQuery)
     }
 
 }

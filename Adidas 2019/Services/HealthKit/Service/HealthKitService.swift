@@ -8,14 +8,14 @@
 
 import HealthKit
 
-private enum HealthkitSetupError: Error {
+fileprivate enum HealthkitSetupError: Error {
     case notAvailableOnDevice
     case dataTypeNotAvailable
 }
 
 final class HealthKithService {
     
-    let profileDataStore: ProfileDataStore!
+    private let profileDataStore: ProfileDataStore!
     
     init(profileDataStore: ProfileDataStore) {
         self.profileDataStore = profileDataStore
@@ -61,7 +61,7 @@ final class HealthKithService {
         }
     }
     
-    func getAgeSexAndBloodType(onSuccess: (UserHealthProfile) -> Void, onError: (Error) -> Void, onFinnaly: () -> Void) {
+    func getAgeSexAndBloodType(onComplete: (UserHealthProfile) -> Void) {
         
         var userHealthProfile: UserHealthProfile = UserHealthProfile()
         
@@ -70,15 +70,46 @@ final class HealthKithService {
             userHealthProfile.age = userAgeSexAndBloodType.age
             userHealthProfile.biologicalSex = userAgeSexAndBloodType.biologicalSex
             userHealthProfile.bloodType = userAgeSexAndBloodType.bloodType
-            
-            onSuccess(userHealthProfile)
+
 //            updateLabels()
-        } catch let error {
+        } catch {
+            print(error)
 //            self.displayAlert(for: error)
-            onError(error)
+//            onError(userHealthProfile, error)
         }
         
-        onFinnaly()
+        onComplete(userHealthProfile)
+    }
+    
+    func getMostRecentSampleForHeight(onComplete: @escaping (Double?) -> Void) {
+        
+        guard let heightSampleType = HKSampleType.quantityType(forIdentifier: .height) else {
+            print("Height Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        profileDataStore.getMostRecentSample(for: heightSampleType) { (sample, error) in
+            let heightInMeters = sample?.quantity.doubleValue(for: HKUnit.meter())
+            onComplete(heightInMeters)
+        }
+    }
+    
+    func getMostRecentSampleForWeight(onComplete: @escaping (Double?) -> Void) {
+
+        guard let weightSampleType = HKSampleType.quantityType(forIdentifier: .bodyMass) else {
+            print("Body Mass Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        profileDataStore.getMostRecentSample(for: weightSampleType) { (sample, error) in
+            
+            guard let sample = sample else {
+                return
+            }
+            
+            let weightInKilograms = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
+            onComplete(weightInKilograms)
+        }
     }
 
 }

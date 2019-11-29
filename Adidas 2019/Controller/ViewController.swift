@@ -67,7 +67,7 @@ class ViewController: UITableViewController {
             }
             
             print("HealthKit Successfully Authorized.")
-            self?.getuserAgeSexAndBloodType()
+            self?.getUserHealthProfile()
         }
     }
 
@@ -92,18 +92,22 @@ class ViewController: UITableViewController {
             buttonHealthKit.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
     }
     
-    fileprivate func getuserAgeSexAndBloodType() {
+    fileprivate func getUserHealthProfile() {
         
-        healthKitManager.getAgeSexAndBloodType(onSuccess: { [weak self] (userHealthProfile) in
+        healthKitManager.getAgeSexAndBloodType(onComplete: { [weak self] (userHealthProfile) in
             DispatchQueue.main.async {
+                self?.userHealthProfile = userHealthProfile
                 self?.headerTable.model = userHealthProfile
-            }
-        }, onError: { (error) in
-            print("Error getting getAgeSexAndBloodType. Reason: \(error.localizedDescription)")
-        }) { [weak self] in
-            DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
+        })
+        
+        healthKitManager.getMostRecentSampleForHeight() { [weak self] (height) in
+            self?.userHealthProfile.heightInMeters = height
+        }
+        
+        healthKitManager.getMostRecentSampleForWeight { [weak self] (weight) in
+            self?.userHealthProfile.weightInKilograms = weight
         }
     }
     
