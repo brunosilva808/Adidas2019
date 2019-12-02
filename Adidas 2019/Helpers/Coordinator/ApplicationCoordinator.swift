@@ -19,15 +19,14 @@ class ApplicationCoordinator: Coordinator {
         rootViewController = UINavigationController()
         rootViewController.view.backgroundColor = .white
         
-        let urlSessionProvider = URLSessionProvider()
-        let service = Service(sessionProvider: urlSessionProvider)
-        let healthStore = HKHealthStore()
-        let profileDataStore = ProfileDataStore(healthKitStore: healthStore)
-        let healthKitManager = HealthKithService(profileDataStore: profileDataStore)
-        let viewController = StepsViewController(service: service, healthKitManager: healthKitManager)
+        let viewController = EntryViewController()
         viewController.coordinator = self
-
         rootViewController.pushViewController(viewController, animated: false)
+    }
+    
+    func getService() -> Service {
+        let urlSessionProvider = URLSessionProvider()
+        return Service(sessionProvider: urlSessionProvider)
     }
     
     func start() {
@@ -35,7 +34,15 @@ class ApplicationCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
-    func pushGoalViewController(goal: ItemElement) {
+    func pushStepsViewController() {
+        let service = getService()
+        let viewController = StepsViewController(service: service)
+        viewController.coordinator = self
+        
+        rootViewController.pushViewController(viewController, animated: true)
+    }
+    
+    func pushGoalViewController(goal: Goal) {
         let healthStore = HKHealthStore()
         let workoutDataStore = WorkoutDataStore(healthStore: healthStore)
         let workoutSession = WorkoutSession()
@@ -47,6 +54,13 @@ class ApplicationCoordinator: Coordinator {
                                                     healthKitService: healthKitService)
         goalViewController.coordinator = self
         rootViewController.pushViewController(goalViewController, animated: true)
+    }
+    
+    func pushHomeViewController() {
+        let viewController = HomeViewController()
+        viewController.coordinator = self
+        
+        rootViewController.pushViewController(viewController, animated: true)
     }
     
     func popViewController() {

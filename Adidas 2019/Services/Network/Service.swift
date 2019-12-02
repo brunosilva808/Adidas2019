@@ -15,14 +15,14 @@ final class Service {
         self.sessionProvider = sessionProvider
     }
     
-    func getGoals(completion: @escaping ([ItemElement]) -> Void ) {
+    func getGoals(completion: @escaping ([Goal]) -> Void ) {
         self.sessionProvider.request(type: Response.self, service: AdidasService.goals) { (response) in
             switch response {
             case let .success(items):
                 UserDefaults.Adidas.set(array: items.items, key: .goals)
                 completion(items.items)
             case .failure(_):
-                let items: [ItemElement] = UserDefaults.Adidas.getArray(objectType: ItemElement.self, key: .goals)
+                let items: [Goal] = UserDefaults.Adidas.getArray(objectType: Goal.self, key: .goals)
                 completion(items)
             }
         }

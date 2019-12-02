@@ -9,31 +9,48 @@
 import UIKit
 
 class EntryViewController: StaticTableController {
-
-    var healthKitService: HealthKithService!
+    
+    weak var coordinator: ApplicationCoordinator?
+    private var authorizeTableCell: AuthorizeTableCell!
+    private var goalsTableCell: UITableViewCell!
+    private var profileTableCell: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    init(healthKitService: HealthKithService) {
-        super.init(nibName: nil, bundle: nil)
         
-        self.healthKitService = healthKitService
+        setupTableViewAndCells()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    fileprivate func setupTableViewAndCells() {
+        tableView = UITableView(frame: .zero, style: .grouped)
+        
+        goalsTableCell = UITableViewCell()
+        goalsTableCell.textLabel?.text = "Goals"
+        goalsTableCell.textLabel?.textAlignment = .center
+        
+        authorizeTableCell = AuthorizeTableCell()
+        authorizeTableCell.setTitle(title: "Authorize HealthKit")
+        authorizeTableCell.onButtonTouch = { [weak self] in
+            self?.authorizeHealthKit()
+        }
+        
+        profileTableCell = UITableViewCell()
+        profileTableCell.textLabel?.text = "Profile"
+        profileTableCell.textLabel?.textAlignment = .center
+
+        let tableSectionData1 = TableSectionData(rows: [profileTableCell])
+        cells.append(tableSectionData1)
+        let tableSectionData2 = TableSectionData(rows: [goalsTableCell])
+        cells.append(tableSectionData2)
+        let tableSectionData3 = TableSectionData(rows: [authorizeTableCell])
+        cells.append(tableSectionData3)
     }
-    
 }
 
 extension EntryViewController {
     
     func authorizeHealthKit() {
-        
-        healthKitService.authorizeHealthKit { (authorized, error) in
+        appDelegate.healthKitService.authorizeHealthKit { (authorized, error) in
             guard authorized else {
                 return
             }
@@ -44,6 +61,14 @@ extension EntryViewController {
 extension EntryViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        authorizeHealthKit()
+        switch indexPath.section {
+        case 0:
+            coordinator?.pushHomeViewController()
+            break
+        case 1:
+            coordinator?.pushStepsViewController()
+        default:
+            break
+        }
     }
 }

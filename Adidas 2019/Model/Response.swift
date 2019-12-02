@@ -10,13 +10,14 @@ import Foundation
 
 // MARK: - Item
 struct Response: Codable {
-    let items: [ItemElement]
+    let items: [Goal]
     let nextPageToken: String
 }
 
-// MARK: - ItemElement
-struct ItemElement: Codable {
-    let id, title, itemDescription, type: String
+// MARK: - Goal
+struct Goal: Codable {
+    let id, title, itemDescription: String
+    let type: Type
     let goal: Int
     let reward: Reward
     
@@ -30,6 +31,12 @@ struct ItemElement: Codable {
         case itemDescription = "description"
         case type, goal, reward
     }
+}
+
+enum Type: String, Codable {
+    case step = "step"
+    case walkingDistance = "walking_distance"
+    case runningDistance = "running_distance"
 }
 
 // MARK: - Reward

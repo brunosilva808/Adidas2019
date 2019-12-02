@@ -14,9 +14,9 @@ class GoalTableCell: BaseCell, ModelPresenterCell {
     private var labelTitle: UILabel!
     private var labelDescription: UILabel!
     private var labelGoal: UILabel!
-    private var labelThrophy: UILabel!
-    private var labelPoints: UILabel!
-    var model: ItemElement? {
+//    private var labelThrophy: UILabel!
+//    private var labelPoints: UILabel!
+    var model: Goal? {
         didSet {
             guard let model = model else {
                 return
@@ -25,8 +25,8 @@ class GoalTableCell: BaseCell, ModelPresenterCell {
             labelTitle.text = model.title
             labelDescription.text = model.itemDescription
             labelGoal.text = model.goalAsString
-            labelPoints.text = model.reward.pointsAsString
-            labelThrophy.text = model.reward.trophy
+//            labelPoints.text = model.reward.pointsAsString
+//            labelThrophy.text = model.reward.trophy
         }
     }
     
@@ -40,10 +40,10 @@ class GoalTableCell: BaseCell, ModelPresenterCell {
         labelDescription.numberOfLines = 0
         
         labelGoal = UILabel(frame: .zero)
-        labelPoints = UILabel(frame: .zero)
-        labelThrophy = UILabel(frame: .zero)
+//        labelPoints = UILabel(frame: .zero)
+//        labelThrophy = UILabel(frame: .zero)
         
-        stackView = UIStackView(arrangedSubviews: [labelTitle, labelDescription, labelGoal, labelPoints, labelThrophy])
+        stackView = UIStackView(arrangedSubviews: [labelTitle, labelDescription, labelGoal/*, labelPoints, labelThrophy*/])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
     }

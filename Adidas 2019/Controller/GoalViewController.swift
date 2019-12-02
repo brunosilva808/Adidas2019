@@ -15,14 +15,14 @@ class GoalViewController: StaticTableController {
     private var workoutDataStore: WorkoutDataStore!
     private var workoutSession: WorkoutSession!
     private var healthKitService: HealthKithService!
-    private var goal: ItemElement!
+    private var goal: Goal!
     
     private var cellGoal: GoalTableCell!
     private var cellSteps: DetailsTableCell!
 
     private var barButton: UIBarButtonItem!
     
-    init(workoutDataStore: WorkoutDataStore, goal: ItemElement, workoutSession: WorkoutSession, healthKitService: HealthKithService) {
+    init(workoutDataStore: WorkoutDataStore, goal: Goal, workoutSession: WorkoutSession, healthKitService: HealthKithService) {
         super.init(nibName: nil, bundle: nil)
         
         self.workoutDataStore = workoutDataStore

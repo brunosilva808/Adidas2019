@@ -9,9 +9,10 @@
 import UIKit
 
 class BaseCell: UITableViewCell {
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         setupUIComponents()
         setupViews()
     }

@@ -8,142 +8,72 @@
 
 import UIKit
 
-class HomeViewController: UITableViewController {
+class HomeViewController: StaticTableController {
 
     weak var coordinator: ApplicationCoordinator?
-    private var service: Service!
-    private var healthKitService: HealthKithService!
-    private var items: [ItemElement] = []
-    private var buttonHealthKit: UIButton!
-    private var headerTable: UserTableHeader!
     private var userHealthProfile: UserHealthProfile!
-
-    init(service: Service, healthKitManager: HealthKithService) {
-        super.init(nibName: nil, bundle: nil)
-        
-        self.service = service
-        self.healthKitService = healthKitManager
-    }
+    private var cellBiologicalSex: UITableViewCell!
+    private var cellHeight: UITableViewCell!
+    private var cellWeigth: UITableViewCell!
+    private var cellAge: UITableViewCell!
+    private var cellBloodType: UITableViewCell!
+    private var cellMassIndex: UITableViewCell!
+    private lazy var dispatchGroup = DispatchGroup()
     
     deinit {
-        service = nil
-        healthKitService = nil
-        headerTable = nil
         coordinator = nil
         userHealthProfile = nil
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
-        setupButton()
-        getGoalsFromService()
-    }
-    
-
-    @objc func authorizeHealthKit() {
-        
-        healthKitService.authorizeHealthKit { [weak self] (authorized, error) in
-
-            DispatchQueue.main.async {
-                self?.buttonHealthKit.isHidden = true
-            }
-            
-            guard authorized else {
-                let message = "Error Health Kit authorization"
-                
-                if let error = error {
-                    print("\(message). Reason: \(error.localizedDescription)")
-                } else {
-                    print(message)
-                }
-                
-                return
-            }
-            
-            print("HealthKit Successfully Authorized.")
-            self?.getUserHealthProfile()
-        }
+        setupTableViewAndCells()
+        getUserHealthProfile()
     }
 
-    fileprivate func setupTableView() {
-        tableView.separatorStyle = .none
-        tableView.register(GoalTableCell.self)
-        tableView.rowHeight = UITableView.automaticDimension
+    fileprivate func setupTableViewAndCells() {
+        tableView = UITableView(frame: view.frame, style: .grouped)
         
-        tableView.registerHeaderFooter(UserTableHeader.self)
-        headerTable = UserTableHeader(reuseIdentifier: "Header")
-    }
-    
-    fileprivate func setupButton() {
-        buttonHealthKit = UIButton(type: .roundedRect)
-        buttonHealthKit.setTitle("Authorize health kit", for: .normal)
-        buttonHealthKit.addTarget(self, action: #selector(authorizeHealthKit), for: .touchUpInside)
-        buttonHealthKit.translatesAutoresizingMaskIntoConstraints = false
+        cellAge = UITableViewCell()
+        cellHeight = UITableViewCell()
+        cellBiologicalSex = UITableViewCell()
+        cellWeigth = UITableViewCell()
+        cellBloodType = UITableViewCell()
+        cellMassIndex = UITableViewCell()
         
-        view.addSubview(buttonHealthKit)
-        NSLayoutConstraint.activate([
-            buttonHealthKit.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            buttonHealthKit.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
+        let tableSectionData1 = TableSectionData(rows: [cellAge, cellHeight, cellWeigth, cellBiologicalSex, cellBloodType])
+        cells.append(tableSectionData1)
+        let tableSectionData2 = TableSectionData(rows: [cellMassIndex])
+        cells.append(tableSectionData2)
     }
     
     fileprivate func getUserHealthProfile() {
         
-        healthKitService.getUserHealthProfile(onComplete: { [weak self] (userHealthProfile) in
-            DispatchQueue.main.async {
-                self?.userHealthProfile = userHealthProfile
-                self?.headerTable.model = userHealthProfile
-                self?.tableView.reloadData()
+        appDelegate.healthKitService.getUserHealthProfile(onComplete: { [weak self] (userHealthProfile) in
+            self?.userHealthProfile = userHealthProfile
+            
+            self?.dispatchGroup.enter()
+            self?.appDelegate.healthKitService.getMostRecentSampleForHeight() { [weak self] (height) in
+                self?.userHealthProfile.heightInMeters = height
+                self?.dispatchGroup.leave()
+            }
+            
+            self?.dispatchGroup.enter()
+            self?.appDelegate.healthKitService.getMostRecentSampleForWeight { [weak self] (weight) in
+                self?.userHealthProfile.weightInKilograms = weight
+                self?.dispatchGroup.leave()
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                self?.cellAge.textLabel?.text = self?.userHealthProfile.ageAsString
+                self?.cellBloodType.textLabel?.text = self?.userHealthProfile.bloodTypeAsString
+                self?.cellWeigth.textLabel?.text = self?.userHealthProfile.weightAsString
+                self?.cellHeight.textLabel?.text = self?.userHealthProfile.heightAsString
+                self?.cellBiologicalSex.textLabel?.text = self?.userHealthProfile.biologicalSexAsString
+                self?.cellMassIndex.textLabel?.text = self?.userHealthProfile.bodyMassIndexAsString
             }
         })
-        
-        healthKitService.getMostRecentSampleForHeight() { [weak self] (height) in
-            self?.userHealthProfile.heightInMeters = height
-        }
-        
-        healthKitService.getMostRecentSampleForWeight { [weak self] (weight) in
-            self?.userHealthProfile.weightInKilograms = weight
-        }
-        
     }
-    
-    fileprivate func getGoalsFromService() {
-        
-        service.getGoals { [weak self] (response) in
-            DispatchQueue.main.async {
-                self?.items = response
-            }
-        }
-    }
-    
+
 }
-
-extension HomeViewController {
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.reusableCell(for: indexPath, with: items[indexPath.row]) as GoalTableCell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.pushGoalViewController(goal: items[indexPath.row])
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return headerTable
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60
-    }
-    
-}
-
