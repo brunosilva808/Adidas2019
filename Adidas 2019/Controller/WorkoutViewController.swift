@@ -123,7 +123,7 @@ class WorkoutViewController: StaticTableController {
 
                 self?.loadWorkoutCells(with: workouts)
                 
-                self?.healthKitService.getStepsCount(onComplete: { (distance) in
+                self?.healthKitService.getStepCount(onComplete: { (distance) in
                     
                 })
             }

@@ -43,7 +43,7 @@ class GoalViewController: StaticTableController {
         super.viewDidLoad()
      
         setupTableViewAndCells()
-        healthKitService.getStepsCount { [weak self] (distance) in
+        healthKitService.getStepCount { [weak self] (distance) in
             DispatchQueue.main.async {
                 self?.cellSteps.setupCell(title: String(format: "Steps: %.0f", distance ?? 0))
             }

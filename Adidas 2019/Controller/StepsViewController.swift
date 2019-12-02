@@ -8,15 +8,14 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class StepsViewController: UITableViewController {
 
     weak var coordinator: ApplicationCoordinator?
     private var service: Service!
     private var healthKitService: HealthKithService!
     private var items: [ItemElement] = []
     private var buttonHealthKit: UIButton!
-    private var headerTable: UserTableHeader!
-    private var userHealthProfile: UserHealthProfile!
+    private var tableHeaderSteps: StepsTableHeader!
 
     init(service: Service, healthKitManager: HealthKithService) {
         super.init(nibName: nil, bundle: nil)
@@ -28,9 +27,8 @@ class ViewController: UITableViewController {
     deinit {
         service = nil
         healthKitService = nil
-        headerTable = nil
+        tableHeaderSteps = nil
         coordinator = nil
-        userHealthProfile = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +41,8 @@ class ViewController: UITableViewController {
         setupTableView()
         setupButton()
         getGoalsFromService()
+        
+//        self.view.backgroundColor = .red
     }
     
 
@@ -67,7 +67,7 @@ class ViewController: UITableViewController {
             }
             
             print("HealthKit Successfully Authorized.")
-            self?.getUserHealthProfile()
+            self?.getStepCount()
         }
     }
 
@@ -76,8 +76,8 @@ class ViewController: UITableViewController {
         tableView.register(GoalTableCell.self)
         tableView.rowHeight = UITableView.automaticDimension
         
-        tableView.registerHeaderFooter(UserTableHeader.self)
-        headerTable = UserTableHeader(reuseIdentifier: "Header")
+        tableView.registerHeaderFooter(StepsTableHeader.self)
+        tableHeaderSteps = StepsTableHeader(reuseIdentifier: "Header")
     }
     
     fileprivate func setupButton() {
@@ -92,24 +92,13 @@ class ViewController: UITableViewController {
             buttonHealthKit.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
     }
     
-    fileprivate func getUserHealthProfile() {
+    fileprivate func getStepCount() {
         
-        healthKitService.getUserHealthProfile(onComplete: { [weak self] (userHealthProfile) in
+        healthKitService.getStepCount { [weak self] (distance) in
             DispatchQueue.main.async {
-                self?.userHealthProfile = userHealthProfile
-                self?.headerTable.model = userHealthProfile
-                self?.tableView.reloadData()
+                self?.tableHeaderSteps.model = distance
             }
-        })
-        
-        healthKitService.getMostRecentSampleForHeight() { [weak self] (height) in
-            self?.userHealthProfile.heightInMeters = height
         }
-        
-        healthKitService.getMostRecentSampleForWeight { [weak self] (weight) in
-            self?.userHealthProfile.weightInKilograms = weight
-        }
-        
     }
     
     fileprivate func getGoalsFromService() {
@@ -123,7 +112,7 @@ class ViewController: UITableViewController {
     
 }
 
-extension ViewController {
+extension StepsViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -138,7 +127,7 @@ extension ViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return headerTable
+        return tableHeaderSteps
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

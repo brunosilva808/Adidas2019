@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */; };
-		154DF4B2238D3C4C0026EB00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4B1238D3C4C0026EB00 /* ViewController.swift */; };
+		154DF4B2238D3C4C0026EB00 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */; };
 		154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B6238D3C4F0026EB00 /* Assets.xcassets */; };
 		154DF4BA238D3C4F0026EB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */; };
 		154DF4C5238D3C4F0026EB00 /* Adidas_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */; };
@@ -54,6 +54,9 @@
 		15764848239526C50026CD73 /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764847239526C50026CD73 /* TimeTableCell.swift */; };
 		1576484A239569110026CD73 /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764849239569110026CD73 /* DetailTableCell.swift */; };
 		1576484C2395988F0026CD73 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484B2395988E0026CD73 /* WorkoutViewController.swift */; };
+		1576484E23959E940026CD73 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484D23959E940026CD73 /* HomeViewController.swift */; };
+		1576485023959ECA0026CD73 /* StepsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484F23959ECA0026CD73 /* StepsTableHeader.swift */; };
+		157648522395A3BC0026CD73 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157648512395A3BC0026CD73 /* EntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +79,7 @@
 /* Begin PBXFileReference section */
 		154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adidas 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		154DF4B1238D3C4C0026EB00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		154DF4B6238D3C4F0026EB00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		154DF4B9238D3C4F0026EB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		154DF4BB238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +131,9 @@
 		15764847239526C50026CD73 /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
 		15764849239569110026CD73 /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableCell.swift; sourceTree = "<group>"; };
 		1576484B2395988E0026CD73 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		1576484D23959E940026CD73 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1576484F23959ECA0026CD73 /* StepsTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableHeader.swift; sourceTree = "<group>"; };
+		157648512395A3BC0026CD73 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,9 +310,11 @@
 			isa = PBXGroup;
 			children = (
 				1553F42A239287E500578131 /* Base */,
-				154DF4B1238D3C4C0026EB00 /* ViewController.swift */,
+				1576484D23959E940026CD73 /* HomeViewController.swift */,
+				154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */,
 				1576484B2395988E0026CD73 /* WorkoutViewController.swift */,
 				154DF517238D8F1D0026EB00 /* GoalViewController.swift */,
+				157648512395A3BC0026CD73 /* EntryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -429,6 +437,7 @@
 		15764844239521E00026CD73 /* HeaderFooter */ = {
 			isa = PBXGroup;
 			children = (
+				1576484F23959ECA0026CD73 /* StepsTableHeader.swift */,
 				154DF52B238FD98E0026EB00 /* UserTableHeader.swift */,
 			);
 			path = HeaderFooter;
@@ -593,15 +602,17 @@
 				154DF506238D40D00026EB00 /* Response.swift in Sources */,
 				154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */,
 				1553F4272391770D00578131 /* WorkoutDataStore.swift in Sources */,
+				1576485023959ECA0026CD73 /* StepsTableHeader.swift in Sources */,
 				154DF509238D41BA0026EB00 /* Service.swift in Sources */,
 				154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */,
 				154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */,
 				154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */,
-				154DF4B2238D3C4C0026EB00 /* ViewController.swift in Sources */,
+				154DF4B2238D3C4C0026EB00 /* StepsViewController.swift in Sources */,
 				154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */,
 				154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */,
 				154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */,
 				1553F425239175F800578131 /* WorkoutInterval.swift in Sources */,
+				1576484E23959E940026CD73 /* HomeViewController.swift in Sources */,
 				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
 				1576483E23951B270026CD73 /* WorkoutSession.swift in Sources */,
 				15764848239526C50026CD73 /* TimeTableCell.swift in Sources */,
@@ -622,6 +633,7 @@
 				157648402395213A0026CD73 /* ButtonTableCell.swift in Sources */,
 				154DF516238D87070026EB00 /* ActivityIndicatorManager.swift in Sources */,
 				154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */,
+				157648522395A3BC0026CD73 /* EntryViewController.swift in Sources */,
 				154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */,
 				154DF50E238D7E400026EB00 /* UITableView+Dequeue.swift in Sources */,
 				154DF4F7238D3E3F0026EB00 /* NetworkResponse.swift in Sources */,

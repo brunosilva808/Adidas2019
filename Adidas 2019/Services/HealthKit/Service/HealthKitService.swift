@@ -127,7 +127,7 @@ final class HealthKithService {
         }
     }
 
-    func getStepsCount(onComplete: @escaping (Double?) -> Void) {
+    func getStepCount(onComplete: @escaping (Double?) -> Void) {
         
         profileDataStore.getStepCount() { (distance) in
             onComplete(distance)

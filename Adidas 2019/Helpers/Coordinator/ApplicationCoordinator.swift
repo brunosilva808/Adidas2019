@@ -24,7 +24,7 @@ class ApplicationCoordinator: Coordinator {
         let healthStore = HKHealthStore()
         let profileDataStore = ProfileDataStore(healthKitStore: healthStore)
         let healthKitManager = HealthKithService(profileDataStore: profileDataStore)
-        let viewController = ViewController(service: service, healthKitManager: healthKitManager)
+        let viewController = StepsViewController(service: service, healthKitManager: healthKitManager)
         viewController.coordinator = self
 
         rootViewController.pushViewController(viewController, animated: false)
