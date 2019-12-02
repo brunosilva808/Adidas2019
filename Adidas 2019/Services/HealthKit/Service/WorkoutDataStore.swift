@@ -71,7 +71,7 @@ struct WorkoutDataStore {
         }
     }
     
-    func load(workout: WorkoutInterval, completion: @escaping ([HKWorkout]?, Error?) -> Void) {
+    func load(completion: @escaping ([HKWorkout]?, Error?) -> Void) {
         let workoutPredicate = HKQuery.predicateForWorkouts(with: .running)
         
         //2. Get all workouts that only came from this app.
@@ -83,23 +83,22 @@ struct WorkoutDataStore {
         
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate,
                                               ascending: true)
-        
+        let limit = 0
+
         let query = HKSampleQuery(
             sampleType: .workoutType(),
             predicate: compound,
-            limit: 0,
+            limit: limit,
             sortDescriptors: [sortDescriptor]) { (query, samples, error) in
-//                DispatchQueue.main.async {
-                    guard
-                        let samples = samples as? [HKWorkout],
-                        error == nil
-                        else {
-                            completion(nil, error)
-                            return
-                    }
-                    
-                    completion(samples, nil)
-//                }
+                guard
+                    let samples = samples as? [HKWorkout],
+                    error == nil
+                    else {
+                        completion(nil, error)
+                        return
+                }
+                
+                completion(samples, nil)
         }
         
         HKHealthStore().execute(query)

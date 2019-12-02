@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class GoalViewController: StaticTableController {
 
@@ -19,11 +20,6 @@ class GoalViewController: StaticTableController {
     private var cellTime: TimeTableCell!
     private var workoutSession: WorkoutSession!
     private var barButton: UIBarButtonItem!
-    private lazy var startTimeFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter
-    }()
     
     init(workoutDataStore: WorkoutDataStore, goal: ItemElement, workoutSession: WorkoutSession) {
         super.init(nibName: nil, bundle: nil)
@@ -44,6 +40,7 @@ class GoalViewController: StaticTableController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+//        tableView = UITableView(frame: view.frame, style: .grouped)
         setupCells()
     }
     
@@ -53,44 +50,11 @@ class GoalViewController: StaticTableController {
         loadWorkout()
     }
     
-    @objc func doneButtonPressed() {
-        if let workoutComplete = workoutSession.completeWorkout {
-            workoutDataStore.save(workout: workoutComplete) { [weak self] (response, error) in
-
-                if response {
-                    
-                } else {
-                    
-                }
-                
-//                var alert: UIAlertController!
-//                if response {
-//                    alert = UIAlertController(title: "", message: "Saved with success", preferredStyle: .alert)
-//                } else {
-//                    alert = UIAlertController(title: "", message: "Error saving", preferredStyle: .alert)
-//                }
-//
-//                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//                self?.present(alert, animated: true, completion: {
-//                    self?.navigationItem.rightBarButtonItem = nil
-//                })
-
-            }
-        }
-    }
-    
-    fileprivate func dismissAndClearSession() {
-        workoutSession.clear()
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     fileprivate func setupCells() {
         cellGoal = GoalTableCell(frame: .zero)
         cellGoal.model = goal
-        cells.append(cellGoal)
         
         cellTime = TimeTableCell(workoutSession: workoutSession)
-        cells.append(cellTime)
         
         cellButton = ButtonTableCell(frame: .zero)
         cellButton.onButtonTouch = { [weak self] in
@@ -107,7 +71,8 @@ class GoalViewController: StaticTableController {
             
             self?.cellTime.updateLabels()
         }
-        cells.append(cellButton)
+        
+        cells.append(TableSectionData(rows: [cellGoal, cellTime, cellButton]))
     }
     
     fileprivate func setupTableView() {
@@ -120,10 +85,58 @@ class GoalViewController: StaticTableController {
             tableView.heightAnchor.constraint(equalToConstant: 200)])
     }
     
+    @objc func doneButtonPressed() {
+        if let workoutComplete = workoutSession.completeWorkout {
+            workoutDataStore.save(workout: workoutComplete) { [weak self] (response, error) in
+                DispatchQueue.main.async {
+                    if response {
+                        self?.dismissAndClearSession()
+                    } else {
+                        self?.showErrorAlert()
+                    }
+                }
+            }
+        }
+    }
+    
+    fileprivate func dismissAndClearSession() {
+        workoutSession.clear()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    fileprivate func showErrorAlert() {
+        let alert: UIAlertController = UIAlertController(title: "", message: "Error saving", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     fileprivate func loadWorkout() {
-//        workoutDataStore.load(workout: workout) { (workouts, error) in
-//            print(workouts)
-//        }
+        workoutDataStore.load() { [weak self] (workouts, error) in
+            
+            DispatchQueue.main.async {
+                guard let workouts = workouts else {
+                    return
+                }
+
+                self?.loadWorkoutCells(with: workouts)
+            }
+        }
+    }
+    
+    fileprivate func loadWorkoutCells(with workouts: [HKWorkout]) {
+        print(workouts)
+        var cellsWorkout: [UITableViewCell] = []
+        
+        workouts.forEach {
+            let cell = DetailsTableCell(style: .subtitle, reuseIdentifier: "detailCell")
+            cell.setupCell(workout: $0)
+            cellsWorkout.append(cell)
+        }
+        
+        let tableSectionData = TableSectionData(sectionTitle: "Workouts", rows: cellsWorkout)
+        cells.insert(tableSectionData, at: 1)
+        
+        tableView.reloadData()
     }
 
 }
