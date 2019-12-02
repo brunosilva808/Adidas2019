@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoalTableCell: UITableViewCell, ModelPresenterCell {
+class GoalTableCell: BaseCell, ModelPresenterCell {
     
     private var stackView: UIStackView!
     private var labelTitle: UILabel!
@@ -30,27 +30,11 @@ class GoalTableCell: UITableViewCell, ModelPresenterCell {
         }
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        setupUIComponents()
-        setupView()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-extension GoalTableCell {
-    
-    func setupUIComponents() {
+    override func setupUIComponents() {
         selectionStyle = .none
 
         labelTitle = UILabel(frame: .zero)
         labelTitle.font = UIFont.boldSystemFont(ofSize: 21)
-//        labelTitle.backgroundColor = .red
         
         labelDescription = UILabel(frame: .zero)
         labelDescription.numberOfLines = 0
@@ -64,7 +48,7 @@ extension GoalTableCell {
         stackView.axis = .vertical
     }
 
-    func setupView() {
+    override func setupViews() {
         addSubview(stackView)
         
         NSLayoutConstraint.activate([

@@ -44,6 +44,14 @@
 		154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */; };
 		154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */; };
 		1553F42223900ED600578131 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F42123900ED500578131 /* UserDefaults.swift */; };
+		1553F425239175F800578131 /* WorkoutInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F424239175F800578131 /* WorkoutInterval.swift */; };
+		1553F4272391770D00578131 /* WorkoutDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F4262391770D00578131 /* WorkoutDataStore.swift */; };
+		1553F429239287E300578131 /* StaticTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F428239287E200578131 /* StaticTableController.swift */; };
+		1553F42C23928EF600578131 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F42B23928EF600578131 /* Workout.swift */; };
+		1576483E23951B270026CD73 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576483D23951B270026CD73 /* WorkoutSession.swift */; };
+		157648402395213A0026CD73 /* ButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576483F2395213A0026CD73 /* ButtonTableCell.swift */; };
+		15764842239521AB0026CD73 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764841239521AB0026CD73 /* BaseCell.swift */; };
+		15764848239526C50026CD73 /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764847239526C50026CD73 /* TimeTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +116,14 @@
 		154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+StringRepresentation.swift"; sourceTree = "<group>"; };
 		154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+stringRepresentation.swift"; sourceTree = "<group>"; };
 		1553F42123900ED500578131 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		1553F424239175F800578131 /* WorkoutInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterval.swift; sourceTree = "<group>"; };
+		1553F4262391770D00578131 /* WorkoutDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataStore.swift; sourceTree = "<group>"; };
+		1553F428239287E200578131 /* StaticTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableController.swift; sourceTree = "<group>"; };
+		1553F42B23928EF600578131 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		1576483D23951B270026CD73 /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
+		1576483F2395213A0026CD73 /* ButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableCell.swift; sourceTree = "<group>"; };
+		15764841239521AB0026CD73 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		15764847239526C50026CD73 /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,9 +178,8 @@
 			children = (
 				154DF519238EA07B0026EB00 /* Adidas 2019.entitlements */,
 				154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */,
-				154DF508238D41BA0026EB00 /* Service.swift */,
-				154DF50C238D7DD90026EB00 /* View */,
 				154DF507238D40DD0026EB00 /* Model */,
+				154DF50C238D7DD90026EB00 /* View */,
 				154DF504238D40630026EB00 /* Controller */,
 				154DF520238EA6C10026EB00 /* Services */,
 				154DF503238D3E460026EB00 /* Helpers */,
@@ -213,6 +228,7 @@
 		154DF4E3238D3E3F0026EB00 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				154DF508238D41BA0026EB00 /* Service.swift */,
 				154DF4EA238D3E3F0026EB00 /* Provider */,
 				154DF4F4238D3E3F0026EB00 /* Services */,
 				154DF4E4238D3E3F0026EB00 /* Enums */,
@@ -283,6 +299,7 @@
 		154DF504238D40630026EB00 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1553F42A239287E500578131 /* Base */,
 				154DF4B1238D3C4C0026EB00 /* ViewController.swift */,
 				154DF517238D8F1D0026EB00 /* GoalViewController.swift */,
 			);
@@ -294,6 +311,9 @@
 			children = (
 				154DF505238D40D00026EB00 /* Response.swift */,
 				154DF529238EC9660026EB00 /* UserHealthProfile.swift */,
+				1553F42B23928EF600578131 /* Workout.swift */,
+				1553F424239175F800578131 /* WorkoutInterval.swift */,
+				1576483D23951B270026CD73 /* WorkoutSession.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,9 +321,7 @@
 		154DF50C238D7DD90026EB00 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				154DF512238D7F490026EB00 /* Enum */,
-				154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */,
-				154DF52B238FD98E0026EB00 /* UserTableHeader.swift */,
+				15764845239521ED0026CD73 /* TableCells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +392,7 @@
 			children = (
 				154DF51D238EA1860026EB00 /* HealthKitService.swift */,
 				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
+				1553F4262391770D00578131 /* WorkoutDataStore.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -384,6 +403,43 @@
 				1553F42123900ED500578131 /* UserDefaults.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		1553F42A239287E500578131 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1553F428239287E200578131 /* StaticTableController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		15764843239521AE0026CD73 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				15764841239521AB0026CD73 /* BaseCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		15764844239521E00026CD73 /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				154DF52B238FD98E0026EB00 /* UserTableHeader.swift */,
+			);
+			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
+		15764845239521ED0026CD73 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				15764843239521AE0026CD73 /* Base */,
+				154DF512238D7F490026EB00 /* Enum */,
+				15764844239521E00026CD73 /* HeaderFooter */,
+				154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */,
+				15764847239526C50026CD73 /* TimeTableCell.swift */,
+				1576483F2395213A0026CD73 /* ButtonTableCell.swift */,
+			);
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -530,6 +586,7 @@
 				154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */,
 				154DF506238D40D00026EB00 /* Response.swift in Sources */,
 				154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */,
+				1553F4272391770D00578131 /* WorkoutDataStore.swift in Sources */,
 				154DF509238D41BA0026EB00 /* Service.swift in Sources */,
 				154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */,
 				154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */,
@@ -538,16 +595,23 @@
 				154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */,
 				154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */,
 				154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */,
+				1553F425239175F800578131 /* WorkoutInterval.swift in Sources */,
 				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
+				1576483E23951B270026CD73 /* WorkoutSession.swift in Sources */,
+				15764848239526C50026CD73 /* TimeTableCell.swift in Sources */,
 				154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */,
+				1553F429239287E300578131 /* StaticTableController.swift in Sources */,
 				154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */,
+				1553F42C23928EF600578131 /* Workout.swift in Sources */,
 				154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */,
 				154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */,
 				154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */,
 				154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */,
 				154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */,
 				154DF51E238EA1860026EB00 /* HealthKitService.swift in Sources */,
+				15764842239521AB0026CD73 /* BaseCell.swift in Sources */,
 				154DF4E0238D3C8E0026EB00 /* ApplicationCoordinator.swift in Sources */,
+				157648402395213A0026CD73 /* ButtonTableCell.swift in Sources */,
 				154DF516238D87070026EB00 /* ActivityIndicatorManager.swift in Sources */,
 				154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */,
 				154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */,

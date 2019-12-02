@@ -133,7 +133,7 @@ extension ViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.pushGoalViewController()
+        coordinator?.pushGoalViewController(goal: items[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
