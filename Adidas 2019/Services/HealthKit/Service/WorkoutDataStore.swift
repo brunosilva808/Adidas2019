@@ -32,43 +32,58 @@ struct WorkoutDataStore {
                 return
             }
             
-            guard let quantityType = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned) else {
-                completion(false, nil)
-                return
-            }
+            let samples = self.samples(for: workout)
             
-            let unit = HKUnit.kilocalorie()
-            let totalEnergyBurned = workout.totalEnergyBurned
-            let quantity = HKQuantity(unit: unit, doubleValue: totalEnergyBurned)
-            
-            let sample = HKCumulativeQuantitySeriesSample(type: quantityType,
-                                                          quantity: quantity,
-                                                          start: workout.start,
-                                                          end: workout.end)
-            
-            //1. Add the sample to the workout builder
-            builder.add([sample]) { (success, error) in
+            builder.add(samples) { (success, error) in
                 guard success else {
                     completion(false, error)
                     return
                 }
                 
-                //2. Finish collection workout data and set the workout end date
-                //I should probably use an id
                 builder.endCollection(withEnd: workout.end) { (success, error) in
                     guard success else {
                         completion(false, error)
                         return
                     }
                     
-                    //3. Create the workout with the samples added
-                    builder.finishWorkout { (_, error) in
+                    builder.finishWorkout { (workout, error) in
                         let success = error == nil
                         completion(success, error)
                     }
                 }
             }
         }
+    }
+    
+    private func samples(for workout: Workout) -> [HKSample] {
+        //1. Verify that the energy quantity type is still available to HealthKit.
+        guard let energyQuantityType = HKSampleType.quantityType(
+            forIdentifier: .activeEnergyBurned) else {
+                fatalError("*** Energy Burned Type Not Available ***")
+        }
+        
+        //2. Create a sample for each workoutInterval
+        let samples: [HKSample] = workout.intervals.map { interval in
+            let calorieQuantity = HKQuantity(unit: .kilocalorie(),
+                                             doubleValue: interval.totalEnergyBurned)
+            
+            return HKCumulativeQuantitySeriesSample(type: energyQuantityType,
+                                                    quantity: calorieQuantity,
+                                                    start: interval.start,
+                                                    end: interval.end)
+        }
+        
+//        let samples: [HKSample] = workout.intervals.map { interval in
+//            let calorieQuantity = HKQuantity(unit: .kilocalorie(),
+//                                             doubleValue: interval.totalEnergyBurned)
+//            
+//            return HKCumulativeQuantitySeriesSample(type: energyQuantityType,
+//                                                    quantity: calorieQuantity,
+//                                                    start: interval.start,
+//                                                    end: interval.end)
+//        }
+        
+        return samples
     }
     
     func load(completion: @escaping ([HKWorkout]?, Error?) -> Void) {

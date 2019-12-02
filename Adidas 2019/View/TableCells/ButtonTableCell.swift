@@ -15,6 +15,8 @@ class ButtonTableCell: BaseCell {
     var onButtonTouch: (() -> Void)?
     
     override func setupUIComponents() {
+        selectionStyle = .none
+        
         button = UIButton(type: .roundedRect)
         button.setTitleColor(.green, for: .normal)
         button.setTitle("Start Workout", for: .normal)

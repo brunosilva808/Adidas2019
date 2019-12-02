@@ -13,20 +13,23 @@ class GoalViewController: StaticTableController {
 
     weak var coordinator: ApplicationCoordinator?
     private var workoutDataStore: WorkoutDataStore!
-    private var workout: WorkoutInterval?
+    private var workoutSession: WorkoutSession!
+    private var healthKitService: HealthKithService!
     private var goal: ItemElement!
+    
     private var cellGoal: GoalTableCell!
     private var cellButton: ButtonTableCell!
     private var cellTime: TimeTableCell!
-    private var workoutSession: WorkoutSession!
+
     private var barButton: UIBarButtonItem!
     
-    init(workoutDataStore: WorkoutDataStore, goal: ItemElement, workoutSession: WorkoutSession) {
+    init(workoutDataStore: WorkoutDataStore, goal: ItemElement, workoutSession: WorkoutSession, healthKitService: HealthKithService) {
         super.init(nibName: nil, bundle: nil)
         
         self.workoutDataStore = workoutDataStore
         self.goal = goal
         self.workoutSession = workoutSession
+        self.healthKitService = healthKitService
     }
     
     deinit {
@@ -119,6 +122,15 @@ class GoalViewController: StaticTableController {
                 }
 
                 self?.loadWorkoutCells(with: workouts)
+                
+                self?.healthKitService.getMostRecentSampleDistanceWalkingRunning(onComplete: { (distance) in
+                    print(distance)
+                })
+                
+                if let workout = workouts.first {
+                    self?.healthKitService.getStepCount(workout: workout)
+                    self?.healthKitService.getStepsCount()
+                }
             }
         }
     }

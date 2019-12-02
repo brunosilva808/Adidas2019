@@ -39,9 +39,12 @@ class ApplicationCoordinator: Coordinator {
         let healthStore = HKHealthStore()
         let workoutDataStore = WorkoutDataStore(healthStore: healthStore)
         let workoutSession = WorkoutSession()
+        let profileDataStore = ProfileDataStore(healthKitStore: healthStore)
+        let healthKitService = HealthKithService(profileDataStore: profileDataStore)
         let goalViewController = GoalViewController(workoutDataStore: workoutDataStore,
                                                     goal: goal,
-                                                    workoutSession: workoutSession)
+                                                    workoutSession: workoutSession,
+                                                    healthKitService: healthKitService)
         goalViewController.coordinator = self
         rootViewController.pushViewController(goalViewController, animated: true)
     }

@@ -20,6 +20,8 @@ class DetailsTableCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        selectionStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,6 +30,11 @@ class DetailsTableCell: UITableViewCell {
     
     func setupCell(workout: HKWorkout) {
         textLabel?.text = dateFormatter.string(from: workout.startDate)
+        
+        if let distance = workout.totalDistance?.doubleValue(for: .meter()) {
+            print("Distance: \(distance)")
+        }
+        
         if let caloriesBurned =
             workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) {
             let formattedCalories = String(format: "CaloriesBurned: %.2f",

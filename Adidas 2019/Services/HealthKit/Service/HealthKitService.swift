@@ -34,6 +34,8 @@ final class HealthKithService {
             let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex),
             let bodyMassIndex = HKObjectType.quantityType(forIdentifier: .bodyMassIndex),
             let height = HKObjectType.quantityType(forIdentifier: .height),
+            let distanceWalkingRunning = HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning),
+            let stepCount = HKObjectType.quantityType(forIdentifier: .stepCount),
             let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass),
             let activeEnergy = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
                 
@@ -44,6 +46,8 @@ final class HealthKithService {
         //3. Prepare a list of types you want HealthKit to read and write
         let healthKitTypesToWrite: Set<HKSampleType> = [bodyMassIndex,
                                                         activeEnergy,
+                                                        distanceWalkingRunning,
+                                                        stepCount,
                                                         HKObjectType.workoutType()]
         
         let healthKitTypesToRead: Set<HKObjectType> = [dateOfBirth,
@@ -52,6 +56,8 @@ final class HealthKithService {
                                                        bodyMassIndex,
                                                        height,
                                                        bodyMass,
+                                                       distanceWalkingRunning,
+                                                       stepCount,
                                                        HKObjectType.workoutType()]
         
         //4. Request Authorization
@@ -61,7 +67,7 @@ final class HealthKithService {
         }
     }
     
-    func getAgeSexAndBloodType(onComplete: (UserHealthProfile) -> Void) {
+    func getUserHealthProfile(onComplete: (UserHealthProfile) -> Void) {
         
         var userHealthProfile: UserHealthProfile = UserHealthProfile()
         
@@ -70,12 +76,8 @@ final class HealthKithService {
             userHealthProfile.age = userAgeSexAndBloodType.age
             userHealthProfile.biologicalSex = userAgeSexAndBloodType.biologicalSex
             userHealthProfile.bloodType = userAgeSexAndBloodType.bloodType
-
-//            updateLabels()
         } catch {
             print(error)
-//            self.displayAlert(for: error)
-//            onError(userHealthProfile, error)
         }
         
         onComplete(userHealthProfile)
@@ -109,6 +111,33 @@ final class HealthKithService {
             
             let weightInKilograms = sample.quantity.doubleValue(for: HKUnit.gramUnit(with: .kilo))
             onComplete(weightInKilograms)
+        }
+    }
+    
+    func getMostRecentSampleDistanceWalkingRunning(onComplete: @escaping (Double?) -> Void) {
+        
+        guard let distanceSampleType = HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning) else {
+            print("Distance Sample Type is no longer available in HealthKit")
+            return
+        }
+        
+        profileDataStore.getMostRecentSample(for: distanceSampleType) { (sample, error) in
+            let walkingMeters = sample?.quantity.doubleValue(for: HKUnit.meter())
+            onComplete(walkingMeters)
+        }
+    }
+    
+    func getStepCount(workout: HKWorkout) {
+        
+        profileDataStore.getDistanceWalkingRunning(workout: workout) { (distance) in
+            print(distance)
+        }
+    }
+    
+    func getStepsCount() {
+        
+        profileDataStore.getStepCount() { (distance) in
+            print(distance)
         }
     }
 

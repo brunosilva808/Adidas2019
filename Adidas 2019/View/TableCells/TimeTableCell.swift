@@ -36,6 +36,8 @@ class TimeTableCell: BaseCell {
     }
     
     override func setupUIComponents() {
+        selectionStyle = .none
+        
         labelTime = UILabel(frame: .zero)
         labelTime.textAlignment = .center
         labelTime.text = "00:00"

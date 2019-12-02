@@ -18,9 +18,9 @@ struct WorkoutInterval {
     }
     
     var totalEnergyBurned: Double {
-        let prancerciseCaloriesPerHour: Double = 450
+        let caloriesPerHour: Double = 450
         let hours: Double = duration / 3600
-        let totalCalories = prancerciseCaloriesPerHour * hours
+        let totalCalories = caloriesPerHour * hours
         return totalCalories
     }
 }

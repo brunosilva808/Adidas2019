@@ -391,9 +391,9 @@
 			children = (
 				154DF51D238EA1860026EB00 /* HealthKitService.swift */,
 				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
+				1553F424239175F800578131 /* WorkoutInterval.swift */,
 				1553F42B23928EF600578131 /* Workout.swift */,
 				1553F4262391770D00578131 /* WorkoutDataStore.swift */,
-				1553F424239175F800578131 /* WorkoutInterval.swift */,
 				1576483D23951B270026CD73 /* WorkoutSession.swift */,
 			);
 			path = Service;

@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
 
     weak var coordinator: ApplicationCoordinator?
     private var service: Service!
-    private var healthKitManager: HealthKithService!
+    private var healthKitService: HealthKithService!
     private var items: [ItemElement] = []
     private var buttonHealthKit: UIButton!
     private var headerTable: UserTableHeader!
@@ -22,12 +22,12 @@ class ViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
         
         self.service = service
-        self.healthKitManager = healthKitManager
+        self.healthKitService = healthKitManager
     }
     
     deinit {
         service = nil
-        healthKitManager = nil
+        healthKitService = nil
         headerTable = nil
         coordinator = nil
         userHealthProfile = nil
@@ -48,7 +48,7 @@ class ViewController: UITableViewController {
 
     @objc func authorizeHealthKit() {
         
-        healthKitManager.authorizeHealthKit { [weak self] (authorized, error) in
+        healthKitService.authorizeHealthKit { [weak self] (authorized, error) in
 
             DispatchQueue.main.async {
                 self?.buttonHealthKit.isHidden = true
@@ -94,7 +94,7 @@ class ViewController: UITableViewController {
     
     fileprivate func getUserHealthProfile() {
         
-        healthKitManager.getAgeSexAndBloodType(onComplete: { [weak self] (userHealthProfile) in
+        healthKitService.getUserHealthProfile(onComplete: { [weak self] (userHealthProfile) in
             DispatchQueue.main.async {
                 self?.userHealthProfile = userHealthProfile
                 self?.headerTable.model = userHealthProfile
@@ -102,13 +102,18 @@ class ViewController: UITableViewController {
             }
         })
         
-        healthKitManager.getMostRecentSampleForHeight() { [weak self] (height) in
+        healthKitService.getMostRecentSampleForHeight() { [weak self] (height) in
             self?.userHealthProfile.heightInMeters = height
         }
         
-        healthKitManager.getMostRecentSampleForWeight { [weak self] (weight) in
+        healthKitService.getMostRecentSampleForWeight { [weak self] (weight) in
             self?.userHealthProfile.weightInKilograms = weight
         }
+        
+        healthKitService.getMostRecentSampleDistanceWalkingRunning(onComplete: { (distance) in
+            print(distance)
+        })
+        
     }
     
     fileprivate func getGoalsFromService() {
