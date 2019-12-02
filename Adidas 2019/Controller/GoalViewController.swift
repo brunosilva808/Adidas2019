@@ -18,8 +18,7 @@ class GoalViewController: StaticTableController {
     private var goal: ItemElement!
     
     private var cellGoal: GoalTableCell!
-    private var cellButton: ButtonTableCell!
-    private var cellTime: TimeTableCell!
+    private var cellSteps: DetailsTableCell!
 
     private var barButton: UIBarButtonItem!
     
@@ -43,39 +42,24 @@ class GoalViewController: StaticTableController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-//        tableView = UITableView(frame: view.frame, style: .grouped)
-        setupCells()
+        setupTableViewAndCells()
+        healthKitService.getStepsCount { [weak self] (distance) in
+            DispatchQueue.main.async {
+                self?.cellSteps.setupCell(title: String(format: "Steps: %.0f", distance ?? 0))
+            }
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    fileprivate func setupTableViewAndCells() {
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
         
-        loadWorkout()
-    }
-    
-    fileprivate func setupCells() {
         cellGoal = GoalTableCell(frame: .zero)
         cellGoal.model = goal
         
-        cellTime = TimeTableCell(workoutSession: workoutSession)
+        cellSteps = DetailsTableCell(style: .subtitle, reuseIdentifier: "detailCell")
         
-        cellButton = ButtonTableCell(frame: .zero)
-        cellButton.onButtonTouch = { [weak self] in
-            switch self?.workoutSession.state {
-            case .notStarted?, .finished?:
-                self?.workoutSession.start()
-                self?.cellTime.startTimer()
-            case .active?:
-                self?.workoutSession.end()
-                self?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self?.doneButtonPressed))
-            default:
-                break
-            }
-            
-            self?.cellTime.updateLabels()
-        }
-        
-        cells.append(TableSectionData(rows: [cellGoal, cellTime, cellButton]))
+        cells.append(TableSectionData(rows: [cellGoal, cellSteps]))
     }
     
     fileprivate func setupTableView() {
@@ -86,69 +70,6 @@ class GoalViewController: StaticTableController {
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             tableView.heightAnchor.constraint(equalToConstant: 200)])
-    }
-    
-    @objc func doneButtonPressed() {
-        if let workoutComplete = workoutSession.completeWorkout {
-            workoutDataStore.save(workout: workoutComplete) { [weak self] (response, error) in
-                DispatchQueue.main.async {
-                    if response {
-                        self?.dismissAndClearSession()
-                    } else {
-                        self?.showErrorAlert()
-                    }
-                }
-            }
-        }
-    }
-    
-    fileprivate func dismissAndClearSession() {
-        workoutSession.clear()
-        navigationController?.popViewController(animated: true)
-    }
-    
-    fileprivate func showErrorAlert() {
-        let alert: UIAlertController = UIAlertController(title: "", message: "Error saving", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    fileprivate func loadWorkout() {
-        workoutDataStore.load() { [weak self] (workouts, error) in
-            
-            DispatchQueue.main.async {
-                guard let workouts = workouts else {
-                    return
-                }
-
-                self?.loadWorkoutCells(with: workouts)
-                
-                self?.healthKitService.getMostRecentSampleDistanceWalkingRunning(onComplete: { (distance) in
-                    print(distance)
-                })
-                
-                if let workout = workouts.first {
-                    self?.healthKitService.getStepCount(workout: workout)
-                    self?.healthKitService.getStepsCount()
-                }
-            }
-        }
-    }
-    
-    fileprivate func loadWorkoutCells(with workouts: [HKWorkout]) {
-        print(workouts)
-        var cellsWorkout: [UITableViewCell] = []
-        
-        workouts.forEach {
-            let cell = DetailsTableCell(style: .subtitle, reuseIdentifier: "detailCell")
-            cell.setupCell(workout: $0)
-            cellsWorkout.append(cell)
-        }
-        
-        let tableSectionData = TableSectionData(sectionTitle: "Workouts", rows: cellsWorkout)
-        cells.insert(tableSectionData, at: 1)
-        
-        tableView.reloadData()
     }
 
 }

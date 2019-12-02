@@ -126,18 +126,11 @@ final class HealthKithService {
             onComplete(walkingMeters)
         }
     }
-    
-    func getStepCount(workout: HKWorkout) {
-        
-        profileDataStore.getDistanceWalkingRunning(workout: workout) { (distance) in
-            print(distance)
-        }
-    }
-    
-    func getStepsCount() {
+
+    func getStepsCount(onComplete: @escaping (Double?) -> Void) {
         
         profileDataStore.getStepCount() { (distance) in
-            print(distance)
+            onComplete(distance)
         }
     }
 

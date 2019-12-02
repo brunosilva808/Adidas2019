@@ -110,10 +110,6 @@ class ViewController: UITableViewController {
             self?.userHealthProfile.weightInKilograms = weight
         }
         
-        healthKitService.getMostRecentSampleDistanceWalkingRunning(onComplete: { (distance) in
-            print(distance)
-        })
-        
     }
     
     fileprivate func getGoalsFromService() {

@@ -53,6 +53,7 @@
 		15764842239521AB0026CD73 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764841239521AB0026CD73 /* BaseCell.swift */; };
 		15764848239526C50026CD73 /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764847239526C50026CD73 /* TimeTableCell.swift */; };
 		1576484A239569110026CD73 /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764849239569110026CD73 /* DetailTableCell.swift */; };
+		1576484C2395988F0026CD73 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484B2395988E0026CD73 /* WorkoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		15764841239521AB0026CD73 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		15764847239526C50026CD73 /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
 		15764849239569110026CD73 /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableCell.swift; sourceTree = "<group>"; };
+		1576484B2395988E0026CD73 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 			children = (
 				1553F42A239287E500578131 /* Base */,
 				154DF4B1238D3C4C0026EB00 /* ViewController.swift */,
+				1576484B2395988E0026CD73 /* WorkoutViewController.swift */,
 				154DF517238D8F1D0026EB00 /* GoalViewController.swift */,
 			);
 			path = Controller;
@@ -610,6 +613,7 @@
 				154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */,
 				154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */,
 				154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */,
+				1576484C2395988F0026CD73 /* WorkoutViewController.swift in Sources */,
 				154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */,
 				154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */,
 				154DF51E238EA1860026EB00 /* HealthKitService.swift in Sources */,

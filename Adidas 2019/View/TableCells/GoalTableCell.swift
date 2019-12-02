@@ -52,10 +52,10 @@ class GoalTableCell: BaseCell, ModelPresenterCell {
         addSubview(stackView)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
             stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16)])
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)])
     }
     
 }

@@ -57,80 +57,6 @@ struct ProfileDataStore {
         
         healthKitStore.execute(sampleQuery)
     }
-    
-    func getDistanceWalkingRunning(workout: HKWorkout, completion: @escaping (_ stepRetrieved: Double) -> Void) {
-        
-        //   Define the Step Quantity Type
-        guard let stepsCount = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning) else {
-            return
-        }
-
-        //  Set the Predicates & Interval
-        let predicate = HKQuery.predicateForSamples(withStart: workout.startDate, end: workout.endDate, options: .strictStartDate)
-        var interval = DateComponents()
-        interval.day = 10
-        // Modificar para end - start
-        //  Perform the Query
-        let query = HKStatisticsCollectionQuery(quantityType: stepsCount, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: workout.startDate, intervalComponents: interval)
-        
-        query.initialResultsHandler = { query, results, error in
-            
-            if error != nil {
-                //  Something went Wrong
-                return
-            }
-            
-            if let myResults = results {
-                myResults.enumerateStatistics(from: workout.startDate, to: workout.endDate) { statistics, stop in
-                    
-                    if let quantity = statistics.sumQuantity() {
-                        let steps = quantity.doubleValue(for: HKUnit.count())
-                        
-                        print("Steps = \(steps)")
-                        completion(steps)
-                    }
-                }}
-        }
-        
-        healthKitStore.execute(query)
-    }
-    
-//    func getStepCount(workout: HKWorkout, completion: @escaping (_ stepRetrieved: Double) -> Void) {
-//
-//        //   Define the Step Quantity Type
-//        guard let stepCount = HKQuantityType.quantityType(forIdentifier: .stepCount) else {
-//            return
-//        }
-//
-//        //  Set the Predicates & Interval
-//        let predicate = HKQuery.predicateForSamples(withStart: workout.startDate, end: workout.endDate, options: .strictStartDate)
-//        var interval = DateComponents()
-//        interval.day = 10
-//        // Modificar para end - start
-//        //  Perform the Query
-//        let query = HKStatisticsCollectionQuery(quantityType: stepCount, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: workout.startDate, intervalComponents: interval)
-//
-//        query.initialResultsHandler = { query, results, error in
-//
-//            if error != nil {
-//                //  Something went Wrong
-//                return
-//            }
-//
-//            if let myResults = results {
-//                myResults.enumerateStatistics(from: workout.startDate, to: workout.endDate) { statistics, stop in
-//
-//                    if let quantity = statistics.sumQuantity() {
-//                        let steps = quantity.doubleValue(for: HKUnit.count())
-//
-//                        print("Steps = \(steps)")
-//                        completion(steps)
-//                    }
-//                }}
-//        }
-//
-//        healthKitStore.execute(query)
-//    }
 
     func getStepCount(completion: @escaping (_ stepRetrieved: Double) -> Void) {
         let type = HKSampleType.quantityType(forIdentifier: .stepCount)
@@ -151,14 +77,13 @@ struct ProfileDataStore {
                 print("Something went Wrong")
                 return
             }
+
             if let myResults = results{
                 myResults.enumerateStatistics(from: newDate, to: Date()) { statistics, stop in
                     
                     if let quantity = statistics.sumQuantity() {
                         
-                        let steps = quantity.doubleValue(for: HKUnit.count())
-                        
-                        print("Steps = \(Int(steps))")
+                        let steps = quantity.doubleValue(for: HKUnit.count())                        
                         completion(steps)
                     }
                 }

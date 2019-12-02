@@ -46,4 +46,8 @@ class DetailsTableCell: UITableViewCell {
         }
     }
     
+    func setupCell(title: String) {
+        textLabel?.text = title
+    }
+    
 }
