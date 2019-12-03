@@ -39,7 +39,7 @@ class StepsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        getStepCount()
+        getUserActivity()
     }
 
     fileprivate func setupTableView() {
@@ -52,16 +52,19 @@ class StepsViewController: UITableViewController {
         tableHeaderSteps = StepsTableHeader(reuseIdentifier: "Header")
     }
     
-    fileprivate func getStepCount() {
+    fileprivate func getUserActivity() {
         appDelegate.healthKitService.getStepCount { [weak self] (distance) in
             DispatchQueue.main.async {
-                self?.tableHeaderSteps.model = distance
-                self?.goalsManager.setDistance(distance: distance ?? 0)
+                self?.tableHeaderSteps.steps = distance
+                self?.goalsManager.setSteps(steps: distance ?? 0)
             }
         }
         
-        appDelegate.healthKitService.getDistanceWalkingRunning { (distance) in
-            print("Running")
+        appDelegate.healthKitService.getDistanceWalkingRunning { [weak self] (distance) in
+            DispatchQueue.main.async {
+                self?.tableHeaderSteps.distanceWalkingRunning = distance
+                self?.goalsManager.setDistanceWalkingRunning(distanceWalkingRunning: distance ?? 0)
+            }
         }
     }
     
@@ -89,7 +92,9 @@ extension StepsViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.reusableCell(for: indexPath, with: goals[indexPath.row]) as GoalTableCell
+        let cell = tableView.reusableCell(for: indexPath, with: goals[indexPath.row]) as GoalTableCell
+        cell.goalsManager = goalsManager
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

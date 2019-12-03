@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepsTableHeader: UITableViewHeaderFooterView, ModelPresenterCell {
+class StepsTableHeader: UITableViewHeaderFooterView {
 
     private var labelSteps: UILabel!
     private var labelSubTitle: UILabel!
@@ -16,24 +16,37 @@ class StepsTableHeader: UITableViewHeaderFooterView, ModelPresenterCell {
     private var labelMedalsTitle: UILabel!
     private var labelPoints: UILabel!
     private var labelPointsTitle: UILabel!
+    private var labelRun: UILabel!
+    private var labelRunTitle: UILabel!
     private var stackViewHorizontal: UIStackView!
     private var stackViewVertical: UIStackView!
     private var stackViewMedals: UIStackView!
+    private var stackViewRun: UIStackView!
     private var stackViewPoints: UIStackView!
     var goalsManager: GoalsManager! {
         didSet {
-            self.labelMedals.text = "\(goalsManager.getMedals().count)"
-            self.labelPoints.text = "\(goalsManager.getPoints())"
+            self.labelMedals.text = "\(goalsManager.getTotalMedals())"
+            self.labelPoints.text = "\(goalsManager.getTotalPoints())"
         }
     }
     
-    var model: Double? {
+    var steps: Double? {
         didSet{
-            guard let model = model else {
+            guard let steps = steps else {
                 return
             }
             
-            labelSteps.text = String(format: " %.0f", model)
+            labelSteps.text = String(format: " %.0f", steps)
+        }
+    }
+    
+    var distanceWalkingRunning: Double? {
+        didSet{
+            guard let distanceWalkingRunning = distanceWalkingRunning else {
+                return
+            }
+            
+            labelRun.text = String(format: " %.0fm", distanceWalkingRunning)
         }
     }
 
@@ -60,7 +73,7 @@ extension StepsTableHeader {
         labelSteps = UILabel(frame: .zero)
         labelSteps.text = textDefault
         labelSteps.textAlignment = .center
-        labelSteps.font = UIFont.boldSystemFont(ofSize: 106)
+        labelSteps.font = UIFont.boldSystemFont(ofSize: 126)
         
         labelSubTitle = UILabel(frame: .zero)
         labelSubTitle.font = UIFont.systemFont(ofSize: 16)
@@ -74,26 +87,46 @@ extension StepsTableHeader {
         
         labelMedals = UILabel(frame: .zero)
         labelMedals.text = textDefault
+        labelMedals.textAlignment = .center
         
         labelMedalsTitle = UILabel(frame: .zero)
         labelMedalsTitle.textColor = .gray
+        labelMedalsTitle.textAlignment = .center
         labelMedalsTitle.text = "Medals"
         
         stackViewMedals = UIStackView(arrangedSubviews: [labelMedals, labelMedalsTitle])
         stackViewMedals.axis = .vertical
+        
+        labelRun = UILabel(frame: .zero)
+        labelRun.font = UIFont.boldSystemFont(ofSize: 56)
+        labelRun.textAlignment = .center
+        labelRun.text = textDefault + "m"
+
+        labelRunTitle = UILabel(frame: .zero)
+        labelRunTitle.font = UIFont.systemFont(ofSize: 16)
+        labelRunTitle.textAlignment = .center
+        labelRunTitle.textColor = .gray
+        labelRunTitle.text = "Run"
+
+        stackViewRun = UIStackView(arrangedSubviews: [labelRun, labelRunTitle])
+        stackViewRun.axis = .vertical
+
+        stackViewVertical.addArrangedSubview(stackViewRun)
 
         labelPoints = UILabel(frame: .zero)
         labelPoints.text = textDefault
+        labelPoints.textAlignment = .center
         
         labelPointsTitle = UILabel(frame: .zero)
         labelPointsTitle.textColor = .gray
+        labelPointsTitle.textAlignment = .center
         labelPointsTitle.text = "Points"
-        
+
         stackViewPoints = UIStackView(arrangedSubviews: [labelPoints, labelPointsTitle])
         stackViewPoints.axis = .vertical
         
         stackViewHorizontal = UIStackView(arrangedSubviews: [stackViewMedals, stackViewPoints])
-        
+        stackViewHorizontal.distribution = .fillEqually
         stackViewVertical.addArrangedSubview(stackViewHorizontal)
     }
     

@@ -66,10 +66,10 @@ struct ProfileDataStore {
                 let startDate = UserDefaults.Adidas.get(key: .date) else {
             return
         }
-        
+
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
         let interval: NSDateComponents = NSDateComponents()
-        interval.day = startDate.differenceIn(dateComponents: [.day], to: Date())
+        interval.day = 1//startDate.differenceIn(dateComponents: [.day], to: Date())
         
         let query = HKStatisticsCollectionQuery(quantityType: type,
                                                 quantitySamplePredicate: predicate,
