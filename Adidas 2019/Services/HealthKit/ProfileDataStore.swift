@@ -61,8 +61,8 @@ struct ProfileDataStore {
         healthKitStore.execute(sampleQuery)
     }
     
-    func getQuantityType(identifier: HKQuantityTypeIdentifier, units: HKUnit, completion: @escaping (_ stepRetrieved: Double) -> Void) {
-        guard   let type = HKSampleType.quantityType(forIdentifier: identifier),
+    func getQuantityType(for healthSample: HealthIdentifiers, completion: @escaping (_ stepRetrieved: Double) -> Void) {
+        guard   let type = HKSampleType.quantityType(forIdentifier: healthSample.identifier),
                 let startDate = UserDefaults.Adidas.get(key: .date) else {
             return
         }
@@ -88,7 +88,7 @@ struct ProfileDataStore {
                     
                     if let quantity = statistics.sumQuantity() {
                         
-                        let value = quantity.doubleValue(for: units)
+                        let value = quantity.doubleValue(for: healthSample.units)
                         completion(value)
                     }
                 }

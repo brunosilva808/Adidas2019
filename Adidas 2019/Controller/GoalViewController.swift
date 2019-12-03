@@ -12,25 +12,16 @@ import HealthKit
 class GoalViewController: StaticTableController {
 
     weak var coordinator: ApplicationCoordinator?
-    private var workoutDataStore: WorkoutDataStore!
-    private var workoutSession: WorkoutSession!
     private var goal: Goal!
     
     private var cellGoal: GoalTableCell!
-    private var cellSteps: DetailsTableCell!
 
     private var barButton: UIBarButtonItem!
     
-    init(workoutDataStore: WorkoutDataStore, goal: Goal, workoutSession: WorkoutSession) {
+    init(goal: Goal) {
         super.init(nibName: nil, bundle: nil)
         
-        self.workoutDataStore = workoutDataStore
         self.goal = goal
-        self.workoutSession = workoutSession
-    }
-    
-    deinit {
-        self.workoutSession = nil
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,16 +32,6 @@ class GoalViewController: StaticTableController {
         super.viewDidLoad()
      
         setupTableViewAndCells()
-        
-        appDelegate.healthKitService.getStepCount { [weak self] (distance) in
-            DispatchQueue.main.async {
-                self?.cellSteps.setupCell(title: String(format: "Steps: %.0f", distance ?? 0))
-            }
-        }
-        
-        appDelegate.healthKitService.getDistanceWalkingRunning { (distance) in
-            print("Running")
-        }
     }
     
     fileprivate func setupTableViewAndCells() {
@@ -60,9 +41,7 @@ class GoalViewController: StaticTableController {
         cellGoal = GoalTableCell(frame: .zero)
         cellGoal.model = goal
         
-        cellSteps = DetailsTableCell(style: .subtitle, reuseIdentifier: "detailCell")
-        
-        cells.append(TableSectionData(rows: [cellGoal, cellSteps]))
+        cells.append(TableSectionData(rows: [cellGoal]))
     }
     
     fileprivate func setupTableView() {

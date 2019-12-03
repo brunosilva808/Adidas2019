@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		15083E692396758D00753730 /* Date+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E682396758D00753730 /* Date+Math.swift */; };
 		15083E6C2396A13200753730 /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E6B2396A13200753730 /* WorkoutService.swift */; };
+		15083E6E2396AB3C00753730 /* HealthSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E6D2396AB3C00753730 /* HealthSample.swift */; };
+		15083E712396AB5900753730 /* HealthIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E702396AB5900753730 /* HealthIdentifier.swift */; };
 		154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */; };
 		154DF4B2238D3C4C0026EB00 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */; };
 		154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B6238D3C4F0026EB00 /* Assets.xcassets */; };
@@ -84,6 +86,8 @@
 /* Begin PBXFileReference section */
 		15083E682396758D00753730 /* Date+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Math.swift"; sourceTree = "<group>"; };
 		15083E6B2396A13200753730 /* WorkoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutService.swift; sourceTree = "<group>"; };
+		15083E6D2396AB3C00753730 /* HealthSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSample.swift; sourceTree = "<group>"; };
+		15083E702396AB5900753730 /* HealthIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthIdentifier.swift; sourceTree = "<group>"; };
 		154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adidas 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,22 @@
 				1553F424239175F800578131 /* WorkoutInterval.swift */,
 			);
 			path = Workout;
+			sourceTree = "<group>";
+		};
+		15083E6F2396AB4300753730 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				15083E6D2396AB3C00753730 /* HealthSample.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		15083E722396AB6300753730 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15083E702396AB5900753730 /* HealthIdentifier.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		154DF4A3238D3C4C0026EB00 = {
@@ -398,20 +418,11 @@
 		154DF520238EA6C10026EB00 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				154DF521238EA6DA0026EB00 /* HealthKit */,
+				15083E6A2396A07D00753730 /* Workout */,
+				154DF530238FE1E90026EB00 /* HealthKit */,
 				154DF4E3238D3E3F0026EB00 /* Network */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		154DF521238EA6DA0026EB00 /* HealthKit */ = {
-			isa = PBXGroup;
-			children = (
-				154DF530238FE1E90026EB00 /* Service */,
-				15083E6A2396A07D00753730 /* Workout */,
-				154DF52F238FE1A10026EB00 /* Extension */,
-			);
-			path = HealthKit;
 			sourceTree = "<group>";
 		};
 		154DF52F238FE1A10026EB00 /* Extension */ = {
@@ -423,13 +434,16 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		154DF530238FE1E90026EB00 /* Service */ = {
+		154DF530238FE1E90026EB00 /* HealthKit */ = {
 			isa = PBXGroup;
 			children = (
+				15083E722396AB6300753730 /* Protocol */,
+				15083E6F2396AB4300753730 /* Enum */,
+				154DF52F238FE1A10026EB00 /* Extension */,
 				154DF51D238EA1860026EB00 /* HealthKitService.swift */,
 				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
 			);
-			path = Service;
+			path = HealthKit;
 			sourceTree = "<group>";
 		};
 		1553F42323900ED800578131 /* Utils */ = {
@@ -640,6 +654,7 @@
 				1576484E23959E940026CD73 /* UserProfileViewController.swift in Sources */,
 				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
 				1576483E23951B270026CD73 /* WorkoutSession.swift in Sources */,
+				15083E6E2396AB3C00753730 /* HealthSample.swift in Sources */,
 				15083E6C2396A13200753730 /* WorkoutService.swift in Sources */,
 				15764848239526C50026CD73 /* TimeTableCell.swift in Sources */,
 				154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */,
@@ -648,6 +663,7 @@
 				1553F429239287E300578131 /* StaticTableController.swift in Sources */,
 				154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */,
 				1553F42C23928EF600578131 /* Workout.swift in Sources */,
+				15083E712396AB5900753730 /* HealthIdentifier.swift in Sources */,
 				154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */,
 				154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */,
 				154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */,

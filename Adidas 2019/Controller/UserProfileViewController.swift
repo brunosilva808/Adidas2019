@@ -76,13 +76,13 @@ class UserProfileViewController: StaticTableController {
             self?.userHealthProfile = userHealthProfile
             
             self?.dispatchGroup.enter()
-            self?.appDelegate.healthKitService.getMostRecentSampleForHeight() { [weak self] (height) in
+            self?.appDelegate.healthKitService.getMostRecentSample(for: HealthSample.height) { [weak self] (height) in
                 self?.userHealthProfile.heightInMeters = height
                 self?.dispatchGroup.leave()
             }
             
             self?.dispatchGroup.enter()
-            self?.appDelegate.healthKitService.getMostRecentSampleForWeight { [weak self] (weight) in
+            self?.appDelegate.healthKitService.getMostRecentSample(for: HealthSample.weight) { [weak self] (weight) in
                 self?.userHealthProfile.weightInKilograms = weight
                 self?.dispatchGroup.leave()
             }

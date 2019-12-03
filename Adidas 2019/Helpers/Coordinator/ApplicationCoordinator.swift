@@ -43,13 +43,9 @@ class ApplicationCoordinator: Coordinator {
     }
     
     func pushGoalViewController(goal: Goal) {
-        let healthStore = HKHealthStore()
-        let workoutDataStore = WorkoutDataStore(healthStore: healthStore)
-        let workoutSession = WorkoutSession()
-        let goalViewController = GoalViewController(workoutDataStore: workoutDataStore,
-                                                    goal: goal,
-                                                    workoutSession: workoutSession)
+        let goalViewController = GoalViewController(goal: goal)
         goalViewController.coordinator = self
+        
         rootViewController.pushViewController(goalViewController, animated: true)
     }
     

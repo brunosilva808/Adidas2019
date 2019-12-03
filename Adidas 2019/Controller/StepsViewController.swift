@@ -53,14 +53,14 @@ class StepsViewController: UITableViewController {
     }
     
     fileprivate func getUserActivity() {
-        appDelegate.healthKitService.getStepCount { [weak self] (distance) in
+        appDelegate.healthKitService.getSample(for: HealthSample.steps) { [weak self] (distance) in
             DispatchQueue.main.async {
                 self?.tableHeaderSteps.steps = distance
                 self?.goalsManager.setSteps(steps: distance ?? 0)
             }
         }
         
-        appDelegate.healthKitService.getDistanceWalkingRunning { [weak self] (distance) in
+        appDelegate.healthKitService.getSample(for: HealthSample.walkingRunning) { [weak self] (distance) in
             DispatchQueue.main.async {
                 self?.tableHeaderSteps.distanceWalkingRunning = distance
                 self?.goalsManager.setDistanceWalkingRunning(distanceWalkingRunning: distance ?? 0)
