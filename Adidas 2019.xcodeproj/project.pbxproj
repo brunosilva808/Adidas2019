@@ -1,0 +1,1144 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15083E692396758D00753730 /* Date+Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E682396758D00753730 /* Date+Math.swift */; };
+		15083E6C2396A13200753730 /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E6B2396A13200753730 /* WorkoutService.swift */; };
+		15083E6E2396AB3C00753730 /* HealthSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E6D2396AB3C00753730 /* HealthSample.swift */; };
+		15083E712396AB5900753730 /* HealthIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E702396AB5900753730 /* HealthIdentifier.swift */; };
+		15083E742396AF5F00753730 /* HealthKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E732396AF5F00753730 /* HealthKitProtocol.swift */; };
+		15083E772396B05F00753730 /* WorkDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E762396B05F00753730 /* WorkDataStoreProtocol.swift */; };
+		15083E7A2396B11500753730 /* WorkoutServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E792396B11500753730 /* WorkoutServiceProtocol.swift */; };
+		15083E932396BB1000753730 /* goals.json in Resources */ = {isa = PBXBuildFile; fileRef = 15083E8F2396BB1000753730 /* goals.json */; };
+		15083E942396BB1000753730 /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E912396BB1000753730 /* NetworkingMock.swift */; };
+		15083E952396BB1000753730 /* MockFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E922396BB1000753730 /* MockFile.swift */; };
+		15083E972396BC6900753730 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E962396BC6900753730 /* UserDefaultsTests.swift */; };
+		15083E992396C74C00753730 /* HealthKitServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E982396C74C00753730 /* HealthKitServiceTests.swift */; };
+		15083E9C2396E4D800753730 /* ModelPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E9B2396E4D800753730 /* ModelPresenterTests.swift */; };
+		15083EA42396E68200753730 /* WorkoutServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083EA32396E68200753730 /* WorkoutServiceTests.swift */; };
+		15083EA72396EFF100753730 /* GoalManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083EA62396EFF100753730 /* GoalManagerTests.swift */; };
+		154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */; };
+		154DF4B2238D3C4C0026EB00 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */; };
+		154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B6238D3C4F0026EB00 /* Assets.xcassets */; };
+		154DF4BA238D3C4F0026EB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */; };
+		154DF4C5238D3C4F0026EB00 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4C4238D3C4F0026EB00 /* APITests.swift */; };
+		154DF4D0238D3C4F0026EB00 /* Adidas_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */; };
+		154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4DF238D3C8E0026EB00 /* Coordinator.swift */; };
+		154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */; };
+		154DF4F7238D3E3F0026EB00 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E6238D3E3F0026EB00 /* NetworkResponse.swift */; };
+		154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E7238D3E3F0026EB00 /* HTTPMethod.swift */; };
+		154DF4F9238D3E3F0026EB00 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E8238D3E3F0026EB00 /* Task.swift */; };
+		154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E9238D3E3F0026EB00 /* NetworkError.swift */; };
+		154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4EB238D3E3F0026EB00 /* URLSessionProvider.swift */; };
+		154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4EE238D3E3F0026EB00 /* URLComponentsExtension.swift */; };
+		154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4EF238D3E3F0026EB00 /* URLRequestExtension.swift */; };
+		154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F1238D3E3F0026EB00 /* ServiceProtocol.swift */; };
+		154DF500238D3E3F0026EB00 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F2238D3E3F0026EB00 /* URLSessionProtocol.swift */; };
+		154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F3238D3E3F0026EB00 /* ProviderProtocol.swift */; };
+		154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4F5238D3E3F0026EB00 /* AdidasService.swift */; };
+		154DF506238D40D00026EB00 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF505238D40D00026EB00 /* Response.swift */; };
+		154DF509238D41BA0026EB00 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF508238D41BA0026EB00 /* Service.swift */; };
+		154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */; };
+		154DF50E238D7E400026EB00 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */; };
+		154DF511238D7F420026EB00 /* ModelPresenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF510238D7F420026EB00 /* ModelPresenterCell.swift */; };
+		154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */; };
+		154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF517238D8F1D0026EB00 /* GoalViewController.swift */; };
+		154DF51C238EA07C0026EB00 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154DF51B238EA07C0026EB00 /* HealthKit.framework */; };
+		154DF51E238EA1860026EB00 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF51D238EA1860026EB00 /* HealthKitService.swift */; };
+		154DF526238EC36C0026EB00 /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF525238EC36C0026EB00 /* ProfileDataStore.swift */; };
+		154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF527238EC6580026EB00 /* Date+DateComponents.swift */; };
+		154DF52A238EC9660026EB00 /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF529238EC9660026EB00 /* UserHealthProfile.swift */; };
+		154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52B238FD98E0026EB00 /* UserTableHeader.swift */; };
+		154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */; };
+		154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */; };
+		1553F42223900ED600578131 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F42123900ED500578131 /* UserDefaults.swift */; };
+		1553F425239175F800578131 /* WorkoutInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F424239175F800578131 /* WorkoutInterval.swift */; };
+		1553F4272391770D00578131 /* WorkoutDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F4262391770D00578131 /* WorkoutDataStore.swift */; };
+		1553F429239287E300578131 /* StaticTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F428239287E200578131 /* StaticTableController.swift */; };
+		1553F42C23928EF600578131 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1553F42B23928EF600578131 /* Workout.swift */; };
+		1576483E23951B270026CD73 /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576483D23951B270026CD73 /* WorkoutSession.swift */; };
+		157648402395213A0026CD73 /* ButtonTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576483F2395213A0026CD73 /* ButtonTableCell.swift */; };
+		15764842239521AB0026CD73 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764841239521AB0026CD73 /* BaseCell.swift */; };
+		15764848239526C50026CD73 /* TimeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764847239526C50026CD73 /* TimeTableCell.swift */; };
+		1576484A239569110026CD73 /* DetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15764849239569110026CD73 /* DetailTableCell.swift */; };
+		1576484C2395988F0026CD73 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484B2395988E0026CD73 /* WorkoutViewController.swift */; };
+		1576484E23959E940026CD73 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484D23959E940026CD73 /* UserProfileViewController.swift */; };
+		1576485023959ECA0026CD73 /* StepsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576484F23959ECA0026CD73 /* StepsTableHeader.swift */; };
+		157648522395A3BC0026CD73 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157648512395A3BC0026CD73 /* EntryViewController.swift */; };
+		157648542395A65A0026CD73 /* InitializerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157648532395A6590026CD73 /* InitializerManager.swift */; };
+		157648582395A7670026CD73 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157648572395A7670026CD73 /* ApplicationCoordinator.swift */; };
+		1576485A2395A7980026CD73 /* AppDelegate+Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157648592395A7980026CD73 /* AppDelegate+Variables.swift */; };
+		1576485C2395AB580026CD73 /* AuthorizeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1576485B2395AB580026CD73 /* AuthorizeTableCell.swift */; };
+		15D2D8962395C2BD007F61B1 /* GoalsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D2D8952395C2BD007F61B1 /* GoalsManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		154DF4C1238D3C4F0026EB00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 154DF4A4238D3C4C0026EB00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154DF4AB238D3C4C0026EB00;
+			remoteInfo = "Adidas 2019";
+		};
+		154DF4CC238D3C4F0026EB00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 154DF4A4238D3C4C0026EB00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 154DF4AB238D3C4C0026EB00;
+			remoteInfo = "Adidas 2019";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15083E682396758D00753730 /* Date+Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Math.swift"; sourceTree = "<group>"; };
+		15083E6B2396A13200753730 /* WorkoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutService.swift; sourceTree = "<group>"; };
+		15083E6D2396AB3C00753730 /* HealthSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSample.swift; sourceTree = "<group>"; };
+		15083E702396AB5900753730 /* HealthIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthIdentifier.swift; sourceTree = "<group>"; };
+		15083E732396AF5F00753730 /* HealthKitProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitProtocol.swift; path = ../../../../../../Documents/HealthKitProtocol.swift; sourceTree = "<group>"; };
+		15083E762396B05F00753730 /* WorkDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDataStoreProtocol.swift; sourceTree = "<group>"; };
+		15083E792396B11500753730 /* WorkoutServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutServiceProtocol.swift; sourceTree = "<group>"; };
+		15083E8F2396BB1000753730 /* goals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goals.json; sourceTree = "<group>"; };
+		15083E912396BB1000753730 /* NetworkingMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
+		15083E922396BB1000753730 /* MockFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFile.swift; sourceTree = "<group>"; };
+		15083E962396BC6900753730 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
+		15083E982396C74C00753730 /* HealthKitServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitServiceTests.swift; sourceTree = "<group>"; };
+		15083E9B2396E4D800753730 /* ModelPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenterTests.swift; sourceTree = "<group>"; };
+		15083EA32396E68200753730 /* WorkoutServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutServiceTests.swift; sourceTree = "<group>"; };
+		15083EA62396EFF100753730 /* GoalManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalManagerTests.swift; sourceTree = "<group>"; };
+		154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adidas 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		154DF4B6238D3C4F0026EB00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		154DF4B9238D3C4F0026EB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		154DF4BB238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adidas 2019Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154DF4C4238D3C4F0026EB00 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		154DF4C6238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adidas 2019UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adidas_2019UITests.swift; sourceTree = "<group>"; };
+		154DF4D1238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		154DF4DF238D3C8E0026EB00 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParametersEncoding.swift; sourceTree = "<group>"; };
+		154DF4E6238D3E3F0026EB00 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		154DF4E7238D3E3F0026EB00 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		154DF4E8238D3E3F0026EB00 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		154DF4E9238D3E3F0026EB00 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		154DF4EB238D3E3F0026EB00 /* URLSessionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		154DF4EE238D3E3F0026EB00 /* URLComponentsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLComponentsExtension.swift; sourceTree = "<group>"; };
+		154DF4EF238D3E3F0026EB00 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		154DF4F1238D3E3F0026EB00 /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
+		154DF4F2238D3E3F0026EB00 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		154DF4F3238D3E3F0026EB00 /* ProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderProtocol.swift; sourceTree = "<group>"; };
+		154DF4F5238D3E3F0026EB00 /* AdidasService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdidasService.swift; sourceTree = "<group>"; };
+		154DF505238D40D00026EB00 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		154DF508238D41BA0026EB00 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalTableCell.swift; sourceTree = "<group>"; };
+		154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
+		154DF510238D7F420026EB00 /* ModelPresenterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenterCell.swift; sourceTree = "<group>"; };
+		154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableView+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		154DF517238D8F1D0026EB00 /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		154DF519238EA07B0026EB00 /* Adidas 2019.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Adidas 2019.entitlements"; sourceTree = "<group>"; };
+		154DF51B238EA07C0026EB00 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		154DF51D238EA1860026EB00 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		154DF525238EC36C0026EB00 /* ProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
+		154DF527238EC6580026EB00 /* Date+DateComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+DateComponents.swift"; sourceTree = "<group>"; };
+		154DF529238EC9660026EB00 /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		154DF52B238FD98E0026EB00 /* UserTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableHeader.swift; sourceTree = "<group>"; };
+		154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+StringRepresentation.swift"; sourceTree = "<group>"; };
+		154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HKBloodType+stringRepresentation.swift"; sourceTree = "<group>"; };
+		1553F42123900ED500578131 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		1553F424239175F800578131 /* WorkoutInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterval.swift; sourceTree = "<group>"; };
+		1553F4262391770D00578131 /* WorkoutDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDataStore.swift; sourceTree = "<group>"; };
+		1553F428239287E200578131 /* StaticTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticTableController.swift; sourceTree = "<group>"; };
+		1553F42B23928EF600578131 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		1576483D23951B270026CD73 /* WorkoutSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
+		1576483F2395213A0026CD73 /* ButtonTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableCell.swift; sourceTree = "<group>"; };
+		15764841239521AB0026CD73 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		15764847239526C50026CD73 /* TimeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCell.swift; sourceTree = "<group>"; };
+		15764849239569110026CD73 /* DetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableCell.swift; sourceTree = "<group>"; };
+		1576484B2395988E0026CD73 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		1576484D23959E940026CD73 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		1576484F23959ECA0026CD73 /* StepsTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsTableHeader.swift; sourceTree = "<group>"; };
+		157648512395A3BC0026CD73 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		157648532395A6590026CD73 /* InitializerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializerManager.swift; sourceTree = "<group>"; };
+		157648572395A7670026CD73 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		157648592395A7980026CD73 /* AppDelegate+Variables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Variables.swift"; sourceTree = "<group>"; };
+		1576485B2395AB580026CD73 /* AuthorizeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeTableCell.swift; sourceTree = "<group>"; };
+		15D2D8952395C2BD007F61B1 /* GoalsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		154DF4A9238D3C4C0026EB00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF51C238EA07C0026EB00 /* HealthKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4BD238D3C4F0026EB00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4C8238D3C4F0026EB00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15083E6A2396A07D00753730 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				15083E782396B06600753730 /* Protocol */,
+				15083E752396AFFF00753730 /* Model */,
+				15083E6B2396A13200753730 /* WorkoutService.swift */,
+				1553F4262391770D00578131 /* WorkoutDataStore.swift */,
+				1576483D23951B270026CD73 /* WorkoutSession.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		15083E6F2396AB4300753730 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				15083E6D2396AB3C00753730 /* HealthSample.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		15083E722396AB6300753730 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15083E702396AB5900753730 /* HealthIdentifier.swift */,
+				15083E732396AF5F00753730 /* HealthKitProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15083E752396AFFF00753730 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1553F42B23928EF600578131 /* Workout.swift */,
+				1553F424239175F800578131 /* WorkoutInterval.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		15083E782396B06600753730 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				15083E762396B05F00753730 /* WorkDataStoreProtocol.swift */,
+				15083E792396B11500753730 /* WorkoutServiceProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		15083E8E2396BB1000753730 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				15083E8F2396BB1000753730 /* goals.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		15083E902396BB1000753730 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15083E912396BB1000753730 /* NetworkingMock.swift */,
+				15083E922396BB1000753730 /* MockFile.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15083E9A2396E4D800753730 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9B2396E4D800753730 /* ModelPresenterTests.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		15083E9D2396E4F500753730 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9E2396E4FB00753730 /* Utils */,
+				15083EA62396EFF100753730 /* GoalManagerTests.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		15083E9E2396E4FB00753730 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15083E962396BC6900753730 /* UserDefaultsTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15083E9F2396E50200753730 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				15083E982396C74C00753730 /* HealthKitServiceTests.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		15083EA02396E51700753730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4C4238D3C4F0026EB00 /* APITests.swift */,
+				15083E8E2396BB1000753730 /* Files */,
+				15083E902396BB1000753730 /* Utils */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		15083EA12396E51E00753730 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9F2396E50200753730 /* HealthKit */,
+				15083EA02396E51700753730 /* Network */,
+				15083EA52396E68500753730 /* Workout */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		15083EA22396E52600753730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9A2396E4D800753730 /* Enum */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15083EA52396E68500753730 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				15083EA32396E68200753730 /* WorkoutServiceTests.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		154DF4A3238D3C4C0026EB00 = {
+			isa = PBXGroup;
+			children = (
+				154DF4AE238D3C4C0026EB00 /* Adidas 2019 */,
+				154DF4C3238D3C4F0026EB00 /* Adidas 2019Tests */,
+				154DF4CE238D3C4F0026EB00 /* Adidas 2019UITests */,
+				154DF4AD238D3C4C0026EB00 /* Products */,
+				154DF51A238EA07C0026EB00 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		154DF4AD238D3C4C0026EB00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */,
+				154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */,
+				154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		154DF4AE238D3C4C0026EB00 /* Adidas 2019 */ = {
+			isa = PBXGroup;
+			children = (
+				154DF519238EA07B0026EB00 /* Adidas 2019.entitlements */,
+				154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */,
+				154DF507238D40DD0026EB00 /* Model */,
+				154DF50C238D7DD90026EB00 /* View */,
+				154DF504238D40630026EB00 /* Controller */,
+				154DF520238EA6C10026EB00 /* Services */,
+				154DF503238D3E460026EB00 /* Helpers */,
+				154DF4E2238D3D240026EB00 /* Resources */,
+			);
+			path = "Adidas 2019";
+			sourceTree = "<group>";
+		};
+		154DF4C3238D3C4F0026EB00 /* Adidas 2019Tests */ = {
+			isa = PBXGroup;
+			children = (
+				15083EA22396E52600753730 /* View */,
+				15083E9D2396E4F500753730 /* Helpers */,
+				15083EA12396E51E00753730 /* Services */,
+				154DF4C6238D3C4F0026EB00 /* Info.plist */,
+			);
+			path = "Adidas 2019Tests";
+			sourceTree = "<group>";
+		};
+		154DF4CE238D3C4F0026EB00 /* Adidas 2019UITests */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */,
+				154DF4D1238D3C4F0026EB00 /* Info.plist */,
+			);
+			path = "Adidas 2019UITests";
+			sourceTree = "<group>";
+		};
+		154DF4DD238D3C8E0026EB00 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				157648572395A7670026CD73 /* ApplicationCoordinator.swift */,
+				154DF4DF238D3C8E0026EB00 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		154DF4E2238D3D240026EB00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4B6238D3C4F0026EB00 /* Assets.xcassets */,
+				154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */,
+				154DF4BB238D3C4F0026EB00 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		154DF4E3238D3E3F0026EB00 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				154DF508238D41BA0026EB00 /* Service.swift */,
+				154DF4EA238D3E3F0026EB00 /* Provider */,
+				154DF4F4238D3E3F0026EB00 /* Services */,
+				154DF4E4238D3E3F0026EB00 /* Enums */,
+				154DF4ED238D3E3F0026EB00 /* Extensions */,
+				154DF4F0238D3E3F0026EB00 /* Protocols */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		154DF4E4238D3E3F0026EB00 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */,
+				154DF4E6238D3E3F0026EB00 /* NetworkResponse.swift */,
+				154DF4E7238D3E3F0026EB00 /* HTTPMethod.swift */,
+				154DF4E8238D3E3F0026EB00 /* Task.swift */,
+				154DF4E9238D3E3F0026EB00 /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		154DF4EA238D3E3F0026EB00 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4EB238D3E3F0026EB00 /* URLSessionProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		154DF4ED238D3E3F0026EB00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4EE238D3E3F0026EB00 /* URLComponentsExtension.swift */,
+				154DF4EF238D3E3F0026EB00 /* URLRequestExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		154DF4F0238D3E3F0026EB00 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4F1238D3E3F0026EB00 /* ServiceProtocol.swift */,
+				154DF4F2238D3E3F0026EB00 /* URLSessionProtocol.swift */,
+				154DF4F3238D3E3F0026EB00 /* ProviderProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		154DF4F4238D3E3F0026EB00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4F5238D3E3F0026EB00 /* AdidasService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		154DF503238D3E460026EB00 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1553F42323900ED800578131 /* Utils */,
+				154DF51F238EA52C0026EB00 /* Manager */,
+				154DF4DD238D3C8E0026EB00 /* Coordinator */,
+				154DF50F238D7E420026EB00 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		154DF504238D40630026EB00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1553F42A239287E500578131 /* Base */,
+				157648512395A3BC0026CD73 /* EntryViewController.swift */,
+				154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */,
+				1576484D23959E940026CD73 /* UserProfileViewController.swift */,
+				1576484B2395988E0026CD73 /* WorkoutViewController.swift */,
+				154DF517238D8F1D0026EB00 /* GoalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		154DF507238D40DD0026EB00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				154DF505238D40D00026EB00 /* Response.swift */,
+				154DF529238EC9660026EB00 /* UserHealthProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		154DF50C238D7DD90026EB00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15764845239521ED0026CD73 /* TableCells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		154DF50F238D7E420026EB00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				157648592395A7980026CD73 /* AppDelegate+Variables.swift */,
+				154DF513238D7F630026EB00 /* ReusableView+ReuseIdentifier.swift */,
+				154DF50D238D7E400026EB00 /* UITableView+Dequeue.swift */,
+				154DF527238EC6580026EB00 /* Date+DateComponents.swift */,
+				15083E682396758D00753730 /* Date+Math.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		154DF512238D7F490026EB00 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				154DF510238D7F420026EB00 /* ModelPresenterCell.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		154DF51A238EA07C0026EB00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				154DF51B238EA07C0026EB00 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		154DF51F238EA52C0026EB00 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				157648532395A6590026CD73 /* InitializerManager.swift */,
+				15D2D8952395C2BD007F61B1 /* GoalsManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		154DF520238EA6C10026EB00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				154DF530238FE1E90026EB00 /* HealthKit */,
+				15083E6A2396A07D00753730 /* Workout */,
+				154DF4E3238D3E3F0026EB00 /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		154DF52F238FE1A10026EB00 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				154DF52D238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift */,
+				154DF531238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		154DF530238FE1E90026EB00 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				15083E722396AB6300753730 /* Protocol */,
+				15083E6F2396AB4300753730 /* Enum */,
+				154DF52F238FE1A10026EB00 /* Extension */,
+				154DF51D238EA1860026EB00 /* HealthKitService.swift */,
+				154DF525238EC36C0026EB00 /* ProfileDataStore.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		1553F42323900ED800578131 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1553F42123900ED500578131 /* UserDefaults.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1553F42A239287E500578131 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1553F428239287E200578131 /* StaticTableController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		15764843239521AE0026CD73 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				15764841239521AB0026CD73 /* BaseCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		15764844239521E00026CD73 /* HeaderFooter */ = {
+			isa = PBXGroup;
+			children = (
+				1576484F23959ECA0026CD73 /* StepsTableHeader.swift */,
+				154DF52B238FD98E0026EB00 /* UserTableHeader.swift */,
+			);
+			path = HeaderFooter;
+			sourceTree = "<group>";
+		};
+		15764845239521ED0026CD73 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				15764843239521AE0026CD73 /* Base */,
+				154DF512238D7F490026EB00 /* Enum */,
+				15764844239521E00026CD73 /* HeaderFooter */,
+				154DF50A238D7DCA0026EB00 /* GoalTableCell.swift */,
+				15764847239526C50026CD73 /* TimeTableCell.swift */,
+				1576483F2395213A0026CD73 /* ButtonTableCell.swift */,
+				1576485B2395AB580026CD73 /* AuthorizeTableCell.swift */,
+				15764849239569110026CD73 /* DetailTableCell.swift */,
+			);
+			path = TableCells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		154DF4AB238D3C4C0026EB00 /* Adidas 2019 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154DF4D4238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019" */;
+			buildPhases = (
+				154DF4A8238D3C4C0026EB00 /* Sources */,
+				154DF4A9238D3C4C0026EB00 /* Frameworks */,
+				154DF4AA238D3C4C0026EB00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Adidas 2019";
+			productName = "Adidas 2019";
+			productReference = 154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */;
+			productType = "com.apple.product-type.application";
+		};
+		154DF4BF238D3C4F0026EB00 /* Adidas 2019Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154DF4D7238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019Tests" */;
+			buildPhases = (
+				154DF4BC238D3C4F0026EB00 /* Sources */,
+				154DF4BD238D3C4F0026EB00 /* Frameworks */,
+				154DF4BE238D3C4F0026EB00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154DF4C2238D3C4F0026EB00 /* PBXTargetDependency */,
+			);
+			name = "Adidas 2019Tests";
+			productName = "Adidas 2019Tests";
+			productReference = 154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		154DF4CA238D3C4F0026EB00 /* Adidas 2019UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 154DF4DA238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019UITests" */;
+			buildPhases = (
+				154DF4C7238D3C4F0026EB00 /* Sources */,
+				154DF4C8238D3C4F0026EB00 /* Frameworks */,
+				154DF4C9238D3C4F0026EB00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				154DF4CD238D3C4F0026EB00 /* PBXTargetDependency */,
+			);
+			name = "Adidas 2019UITests";
+			productName = "Adidas 2019UITests";
+			productReference = 154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		154DF4A4238D3C4C0026EB00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Bruno;
+				TargetAttributes = {
+					154DF4AB238D3C4C0026EB00 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
+					};
+					154DF4BF238D3C4F0026EB00 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 154DF4AB238D3C4C0026EB00;
+					};
+					154DF4CA238D3C4F0026EB00 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 154DF4AB238D3C4C0026EB00;
+					};
+				};
+			};
+			buildConfigurationList = 154DF4A7238D3C4C0026EB00 /* Build configuration list for PBXProject "Adidas 2019" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 154DF4A3238D3C4C0026EB00;
+			productRefGroup = 154DF4AD238D3C4C0026EB00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				154DF4AB238D3C4C0026EB00 /* Adidas 2019 */,
+				154DF4BF238D3C4F0026EB00 /* Adidas 2019Tests */,
+				154DF4CA238D3C4F0026EB00 /* Adidas 2019UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		154DF4AA238D3C4C0026EB00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF4BA238D3C4F0026EB00 /* LaunchScreen.storyboard in Resources */,
+				154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4BE238D3C4F0026EB00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15083E932396BB1000753730 /* goals.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4C9238D3C4F0026EB00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		154DF4A8238D3C4C0026EB00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF52A238EC9660026EB00 /* UserHealthProfile.swift in Sources */,
+				154DF500238D3E3F0026EB00 /* URLSessionProtocol.swift in Sources */,
+				154DF526238EC36C0026EB00 /* ProfileDataStore.swift in Sources */,
+				154DF511238D7F420026EB00 /* ModelPresenterCell.swift in Sources */,
+				1553F42223900ED600578131 /* UserDefaults.swift in Sources */,
+				154DF4F9238D3E3F0026EB00 /* Task.swift in Sources */,
+				154DF4FB238D3E3F0026EB00 /* URLSessionProvider.swift in Sources */,
+				15083E742396AF5F00753730 /* HealthKitProtocol.swift in Sources */,
+				154DF506238D40D00026EB00 /* Response.swift in Sources */,
+				154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */,
+				1553F4272391770D00578131 /* WorkoutDataStore.swift in Sources */,
+				1576485023959ECA0026CD73 /* StepsTableHeader.swift in Sources */,
+				154DF509238D41BA0026EB00 /* Service.swift in Sources */,
+				1576485C2395AB580026CD73 /* AuthorizeTableCell.swift in Sources */,
+				157648542395A65A0026CD73 /* InitializerManager.swift in Sources */,
+				154DF50B238D7DCA0026EB00 /* GoalTableCell.swift in Sources */,
+				154DF532238FE29C0026EB00 /* HKBloodType+stringRepresentation.swift in Sources */,
+				154DF52E238FE1840026EB00 /* HKBiologicalSex+StringRepresentation.swift in Sources */,
+				154DF4B2238D3C4C0026EB00 /* StepsViewController.swift in Sources */,
+				154DF4FF238D3E3F0026EB00 /* ServiceProtocol.swift in Sources */,
+				154DF4FD238D3E3F0026EB00 /* URLComponentsExtension.swift in Sources */,
+				154DF52C238FD98E0026EB00 /* UserTableHeader.swift in Sources */,
+				1553F425239175F800578131 /* WorkoutInterval.swift in Sources */,
+				1576484E23959E940026CD73 /* UserProfileViewController.swift in Sources */,
+				154DF4F8238D3E3F0026EB00 /* HTTPMethod.swift in Sources */,
+				1576483E23951B270026CD73 /* WorkoutSession.swift in Sources */,
+				15083E7A2396B11500753730 /* WorkoutServiceProtocol.swift in Sources */,
+				15083E6E2396AB3C00753730 /* HealthSample.swift in Sources */,
+				15083E6C2396A13200753730 /* WorkoutService.swift in Sources */,
+				15764848239526C50026CD73 /* TimeTableCell.swift in Sources */,
+				154DF502238D3E3F0026EB00 /* AdidasService.swift in Sources */,
+				1576484A239569110026CD73 /* DetailTableCell.swift in Sources */,
+				15083E692396758D00753730 /* Date+Math.swift in Sources */,
+				15083E772396B05F00753730 /* WorkDataStoreProtocol.swift in Sources */,
+				1553F429239287E300578131 /* StaticTableController.swift in Sources */,
+				154DF4FE238D3E3F0026EB00 /* URLRequestExtension.swift in Sources */,
+				1553F42C23928EF600578131 /* Workout.swift in Sources */,
+				15083E712396AB5900753730 /* HealthIdentifier.swift in Sources */,
+				154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */,
+				154DF514238D7F640026EB00 /* ReusableView+ReuseIdentifier.swift in Sources */,
+				154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */,
+				1576484C2395988F0026CD73 /* WorkoutViewController.swift in Sources */,
+				154DF528238EC6580026EB00 /* Date+DateComponents.swift in Sources */,
+				157648582395A7670026CD73 /* ApplicationCoordinator.swift in Sources */,
+				1576485A2395A7980026CD73 /* AppDelegate+Variables.swift in Sources */,
+				154DF4FA238D3E3F0026EB00 /* NetworkError.swift in Sources */,
+				154DF51E238EA1860026EB00 /* HealthKitService.swift in Sources */,
+				15764842239521AB0026CD73 /* BaseCell.swift in Sources */,
+				157648402395213A0026CD73 /* ButtonTableCell.swift in Sources */,
+				154DF501238D3E3F0026EB00 /* ProviderProtocol.swift in Sources */,
+				157648522395A3BC0026CD73 /* EntryViewController.swift in Sources */,
+				154DF518238D8F1D0026EB00 /* GoalViewController.swift in Sources */,
+				154DF50E238D7E400026EB00 /* UITableView+Dequeue.swift in Sources */,
+				154DF4F7238D3E3F0026EB00 /* NetworkResponse.swift in Sources */,
+				15D2D8962395C2BD007F61B1 /* GoalsManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4BC238D3C4F0026EB00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15083E9C2396E4D800753730 /* ModelPresenterTests.swift in Sources */,
+				15083E972396BC6900753730 /* UserDefaultsTests.swift in Sources */,
+				15083EA72396EFF100753730 /* GoalManagerTests.swift in Sources */,
+				154DF4C5238D3C4F0026EB00 /* APITests.swift in Sources */,
+				15083E992396C74C00753730 /* HealthKitServiceTests.swift in Sources */,
+				15083EA42396E68200753730 /* WorkoutServiceTests.swift in Sources */,
+				15083E952396BB1000753730 /* MockFile.swift in Sources */,
+				15083E942396BB1000753730 /* NetworkingMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		154DF4C7238D3C4F0026EB00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				154DF4D0238D3C4F0026EB00 /* Adidas_2019UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		154DF4C2238D3C4F0026EB00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154DF4AB238D3C4C0026EB00 /* Adidas 2019 */;
+			targetProxy = 154DF4C1238D3C4F0026EB00 /* PBXContainerItemProxy */;
+		};
+		154DF4CD238D3C4F0026EB00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 154DF4AB238D3C4C0026EB00 /* Adidas 2019 */;
+			targetProxy = 154DF4CC238D3C4F0026EB00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				154DF4B9238D3C4F0026EB00 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		154DF4D2238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		154DF4D3238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		154DF4D5238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Adidas 2019/Adidas 2019.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
+				INFOPLIST_FILE = "Adidas 2019/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		154DF4D6238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Adidas 2019/Adidas 2019.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CEWUHN7W92;
+				INFOPLIST_FILE = "Adidas 2019/Resources/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		154DF4D8238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adidas 2019.app/Adidas 2019";
+			};
+			name = Debug;
+		};
+		154DF4D9238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adidas 2019.app/Adidas 2019";
+			};
+			name = Release;
+		};
+		154DF4DB238D3C4F0026EB00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Adidas 2019";
+			};
+			name = Debug;
+		};
+		154DF4DC238D3C4F0026EB00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Adidas 2019UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunosilva.Adidas-2019UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Adidas 2019";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		154DF4A7238D3C4C0026EB00 /* Build configuration list for PBXProject "Adidas 2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4D2238D3C4F0026EB00 /* Debug */,
+				154DF4D3238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154DF4D4238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4D5238D3C4F0026EB00 /* Debug */,
+				154DF4D6238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154DF4D7238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4D8238D3C4F0026EB00 /* Debug */,
+				154DF4D9238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		154DF4DA238D3C4F0026EB00 /* Build configuration list for PBXNativeTarget "Adidas 2019UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				154DF4DB238D3C4F0026EB00 /* Debug */,
+				154DF4DC238D3C4F0026EB00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 154DF4A4238D3C4C0026EB00 /* Project object */;
+}
