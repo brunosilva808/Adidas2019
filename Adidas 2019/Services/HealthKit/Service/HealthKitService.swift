@@ -86,7 +86,6 @@ final class HealthKithService {
     func getMostRecentSampleForHeight(onComplete: @escaping (Double?) -> Void) {
         
         guard let heightSampleType = HKSampleType.quantityType(forIdentifier: .height) else {
-            print("Height Sample Type is no longer available in HealthKit")
             return
         }
         
@@ -99,7 +98,6 @@ final class HealthKithService {
     func getMostRecentSampleForWeight(onComplete: @escaping (Double?) -> Void) {
 
         guard let weightSampleType = HKSampleType.quantityType(forIdentifier: .bodyMass) else {
-            print("Body Mass Sample Type is no longer available in HealthKit")
             return
         }
         
@@ -129,7 +127,14 @@ final class HealthKithService {
 
     func getStepCount(onComplete: @escaping (Double?) -> Void) {
         
-        profileDataStore.getStepCount() { (distance) in
+        profileDataStore.getQuantityType(identifier: .stepCount, units: HKUnit.count()) { (distance) in
+            onComplete(distance)
+        }
+    }
+    
+    func getDistanceWalkingRunning(onComplete: @escaping (Double?) -> Void) {
+        
+        profileDataStore.getQuantityType(identifier: .distanceWalkingRunning, units: HKUnit.meter()) { (distance) in
             onComplete(distance)
         }
     }

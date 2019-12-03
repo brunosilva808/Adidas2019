@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: StaticTableController {
+class UserProfileViewController: StaticTableController {
 
     weak var coordinator: ApplicationCoordinator?
     private var userHealthProfile: UserHealthProfile!

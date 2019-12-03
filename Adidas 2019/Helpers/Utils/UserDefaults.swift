@@ -19,6 +19,26 @@ extension KeyNamespaceable {
     }
 }
 
+// MARK: - Date Defaults
+
+protocol DateDefaultable: KeyNamespaceable {
+    associatedtype DateDefaultKey : RawRepresentable
+}
+
+extension DateDefaultable where DateDefaultKey.RawValue == String {
+    
+    static func set(value: Date, key: DateDefaultKey) {
+        let keyRaw = namespace(key)
+        UserDefaults.standard.set(value, forKey: keyRaw)
+    }
+    
+    static func get(key: DateDefaultKey) -> Date? {
+        let keyRaw = namespace(key)
+        return UserDefaults.standard.object(forKey: keyRaw) as? Date
+    }
+    
+}
+
 // MARK: - Any Defaults
 
 protocol AnyUserDefaultable: KeyNamespaceable {
@@ -51,11 +71,15 @@ extension AnyUserDefaultable where AnyDefaultKey.RawValue == String {
 // MARK: - Use: Items
 
 extension UserDefaults {
-    struct Adidas: AnyUserDefaultable {
+    struct Adidas: AnyUserDefaultable, DateDefaultable {
         private init() { }
         
         enum AnyDefaultKey: String {
             case goals
+        }
+        
+        enum DateDefaultKey: String {
+            case date
         }
     }
 }

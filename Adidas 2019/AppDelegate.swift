@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        InitializerManager().initialize(components: [.healthKitService])
+        InitializerManager().initialize(components: [.healthKitService, .app])
         initRootViewController()
         
         return true

@@ -45,7 +45,10 @@ struct ProfileDataStore {
         
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let limit = 1
-        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDescriptor]) { (query, samples, error) in
+        let sampleQuery = HKSampleQuery(sampleType: sampleType,
+                                        predicate: mostRecentPredicate,
+                                        limit: limit,
+                                        sortDescriptors: [sortDescriptor]) { (query, samples, error) in
             
             guard let samples = samples, let mostRecentSample = samples.first as? HKQuantitySample else {
                 completion(nil, error)
@@ -57,34 +60,36 @@ struct ProfileDataStore {
         
         healthKitStore.execute(sampleQuery)
     }
-
-    func getStepCount(completion: @escaping (_ stepRetrieved: Double) -> Void) {
-        let type = HKSampleType.quantityType(forIdentifier: .stepCount)
+    
+    func getQuantityType(identifier: HKQuantityTypeIdentifier, units: HKUnit, completion: @escaping (_ stepRetrieved: Double) -> Void) {
+        guard   let type = HKSampleType.quantityType(forIdentifier: identifier),
+                let startDate = UserDefaults.Adidas.get(key: .date) else {
+            return
+        }
         
-        let cal = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-        let newDate = cal.startOfDay(for: Date())
-        
-        let predicate = HKQuery.predicateForSamples(withStart: newDate, end: Date(), options: []) // Our search predicate which will fetch all steps taken today
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: [])
         let interval: NSDateComponents = NSDateComponents()
-        interval.day = 1
+        interval.day = startDate.differenceIn(dateComponents: [.day], to: Date())
         
-        let query = HKStatisticsCollectionQuery(quantityType: type!, quantitySamplePredicate: predicate, options: .cumulativeSum, anchorDate: newDate, intervalComponents:(interval as NSDateComponents) as DateComponents)
+        let query = HKStatisticsCollectionQuery(quantityType: type,
+                                                quantitySamplePredicate: predicate,
+                                                options: .cumulativeSum,
+                                                anchorDate: startDate,
+                                                intervalComponents:(interval as DateComponents))
         
         query.initialResultsHandler = { query, results, error in
             
             if error != nil {
-                
-                print("Something went Wrong")
                 return
             }
-
+            
             if let myResults = results{
-                myResults.enumerateStatistics(from: newDate, to: Date()) { statistics, stop in
+                myResults.enumerateStatistics(from: startDate, to: Date()) { statistics, stop in
                     
                     if let quantity = statistics.sumQuantity() {
                         
-                        let steps = quantity.doubleValue(for: HKUnit.count())                        
-                        completion(steps)
+                        let value = quantity.doubleValue(for: units)
+                        completion(value)
                     }
                 }
             }

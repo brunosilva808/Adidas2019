@@ -59,6 +59,10 @@ class StepsViewController: UITableViewController {
                 self?.goalsManager.setDistance(distance: distance ?? 0)
             }
         }
+        
+        appDelegate.healthKitService.getDistanceWalkingRunning { (distance) in
+            print("Running")
+        }
     }
     
     fileprivate func getGoals() {
