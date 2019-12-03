@@ -14,11 +14,19 @@
 		15083E742396AF5F00753730 /* HealthKitProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E732396AF5F00753730 /* HealthKitProtocol.swift */; };
 		15083E772396B05F00753730 /* WorkDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E762396B05F00753730 /* WorkDataStoreProtocol.swift */; };
 		15083E7A2396B11500753730 /* WorkoutServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E792396B11500753730 /* WorkoutServiceProtocol.swift */; };
+		15083E932396BB1000753730 /* goals.json in Resources */ = {isa = PBXBuildFile; fileRef = 15083E8F2396BB1000753730 /* goals.json */; };
+		15083E942396BB1000753730 /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E912396BB1000753730 /* NetworkingMock.swift */; };
+		15083E952396BB1000753730 /* MockFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E922396BB1000753730 /* MockFile.swift */; };
+		15083E972396BC6900753730 /* UserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E962396BC6900753730 /* UserDefaultsTests.swift */; };
+		15083E992396C74C00753730 /* HealthKitServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E982396C74C00753730 /* HealthKitServiceTests.swift */; };
+		15083E9C2396E4D800753730 /* ModelPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083E9B2396E4D800753730 /* ModelPresenterTests.swift */; };
+		15083EA42396E68200753730 /* WorkoutServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083EA32396E68200753730 /* WorkoutServiceTests.swift */; };
+		15083EA72396EFF100753730 /* GoalManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15083EA62396EFF100753730 /* GoalManagerTests.swift */; };
 		154DF4B0238D3C4C0026EB00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */; };
 		154DF4B2238D3C4C0026EB00 /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */; };
 		154DF4B7238D3C4F0026EB00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B6238D3C4F0026EB00 /* Assets.xcassets */; };
 		154DF4BA238D3C4F0026EB00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154DF4B8238D3C4F0026EB00 /* LaunchScreen.storyboard */; };
-		154DF4C5238D3C4F0026EB00 /* Adidas_2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */; };
+		154DF4C5238D3C4F0026EB00 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4C4238D3C4F0026EB00 /* APITests.swift */; };
 		154DF4D0238D3C4F0026EB00 /* Adidas_2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */; };
 		154DF4E1238D3C8E0026EB00 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4DF238D3C8E0026EB00 /* Coordinator.swift */; };
 		154DF4F6238D3E3F0026EB00 /* ParametersEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154DF4E5238D3E3F0026EB00 /* ParametersEncoding.swift */; };
@@ -94,6 +102,14 @@
 		15083E732396AF5F00753730 /* HealthKitProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitProtocol.swift; path = ../../../../../../Documents/HealthKitProtocol.swift; sourceTree = "<group>"; };
 		15083E762396B05F00753730 /* WorkDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDataStoreProtocol.swift; sourceTree = "<group>"; };
 		15083E792396B11500753730 /* WorkoutServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutServiceProtocol.swift; sourceTree = "<group>"; };
+		15083E8F2396BB1000753730 /* goals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goals.json; sourceTree = "<group>"; };
+		15083E912396BB1000753730 /* NetworkingMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
+		15083E922396BB1000753730 /* MockFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFile.swift; sourceTree = "<group>"; };
+		15083E962396BC6900753730 /* UserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTests.swift; sourceTree = "<group>"; };
+		15083E982396C74C00753730 /* HealthKitServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitServiceTests.swift; sourceTree = "<group>"; };
+		15083E9B2396E4D800753730 /* ModelPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelPresenterTests.swift; sourceTree = "<group>"; };
+		15083EA32396E68200753730 /* WorkoutServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutServiceTests.swift; sourceTree = "<group>"; };
+		15083EA62396EFF100753730 /* GoalManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalManagerTests.swift; sourceTree = "<group>"; };
 		154DF4AC238D3C4C0026EB00 /* Adidas 2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adidas 2019.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154DF4AF238D3C4C0026EB00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		154DF4B1238D3C4C0026EB00 /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +117,7 @@
 		154DF4B9238D3C4F0026EB00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		154DF4BB238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		154DF4C0238D3C4F0026EB00 /* Adidas 2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adidas 2019Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adidas_2019Tests.swift; sourceTree = "<group>"; };
+		154DF4C4238D3C4F0026EB00 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		154DF4C6238D3C4F0026EB00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		154DF4CB238D3C4F0026EB00 /* Adidas 2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adidas 2019UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		154DF4CF238D3C4F0026EB00 /* Adidas_2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adidas_2019UITests.swift; sourceTree = "<group>"; };
@@ -229,6 +245,92 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		15083E8E2396BB1000753730 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				15083E8F2396BB1000753730 /* goals.json */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		15083E902396BB1000753730 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15083E912396BB1000753730 /* NetworkingMock.swift */,
+				15083E922396BB1000753730 /* MockFile.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15083E9A2396E4D800753730 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9B2396E4D800753730 /* ModelPresenterTests.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		15083E9D2396E4F500753730 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9E2396E4FB00753730 /* Utils */,
+				15083EA62396EFF100753730 /* GoalManagerTests.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		15083E9E2396E4FB00753730 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				15083E962396BC6900753730 /* UserDefaultsTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		15083E9F2396E50200753730 /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				15083E982396C74C00753730 /* HealthKitServiceTests.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		15083EA02396E51700753730 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				154DF4C4238D3C4F0026EB00 /* APITests.swift */,
+				15083E8E2396BB1000753730 /* Files */,
+				15083E902396BB1000753730 /* Utils */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		15083EA12396E51E00753730 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9F2396E50200753730 /* HealthKit */,
+				15083EA02396E51700753730 /* Network */,
+				15083EA52396E68500753730 /* Workout */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		15083EA22396E52600753730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15083E9A2396E4D800753730 /* Enum */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		15083EA52396E68500753730 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				15083EA32396E68200753730 /* WorkoutServiceTests.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
 		154DF4A3238D3C4C0026EB00 = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +370,9 @@
 		154DF4C3238D3C4F0026EB00 /* Adidas 2019Tests */ = {
 			isa = PBXGroup;
 			children = (
-				154DF4C4238D3C4F0026EB00 /* Adidas_2019Tests.swift */,
+				15083EA22396E52600753730 /* View */,
+				15083E9D2396E4F500753730 /* Helpers */,
+				15083EA12396E51E00753730 /* Services */,
 				154DF4C6238D3C4F0026EB00 /* Info.plist */,
 			);
 			path = "Adidas 2019Tests";
@@ -637,6 +741,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15083E932396BB1000753730 /* goals.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,7 +821,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				154DF4C5238D3C4F0026EB00 /* Adidas_2019Tests.swift in Sources */,
+				15083E9C2396E4D800753730 /* ModelPresenterTests.swift in Sources */,
+				15083E972396BC6900753730 /* UserDefaultsTests.swift in Sources */,
+				15083EA72396EFF100753730 /* GoalManagerTests.swift in Sources */,
+				154DF4C5238D3C4F0026EB00 /* APITests.swift in Sources */,
+				15083E992396C74C00753730 /* HealthKitServiceTests.swift in Sources */,
+				15083EA42396E68200753730 /* WorkoutServiceTests.swift in Sources */,
+				15083E952396BB1000753730 /* MockFile.swift in Sources */,
+				15083E942396BB1000753730 /* NetworkingMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

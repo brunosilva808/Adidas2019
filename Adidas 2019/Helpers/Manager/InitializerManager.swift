@@ -11,7 +11,6 @@ import HealthKit
 
 enum InitializationComponent {
     case healthKitService
-    case app
 }
 
 struct InitializerManager {
@@ -25,15 +24,6 @@ struct InitializerManager {
                 let healthStore = HKHealthStore()
                 let profileDataStore = ProfileDataStore(healthKitStore: healthStore)
                 appDelegate.healthKitService = HealthKithService(profileDataStore: profileDataStore)
-            case .app:
-                if UserDefaults.Adidas.get(key: .date) == nil {
-                    let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
-                    guard let date = calendar?.startOfDay(for: Date()) else {
-                        return
-                    }
-                    
-                    UserDefaults.Adidas.set(value: date, key: .date)
-                }
             }
         }
     }

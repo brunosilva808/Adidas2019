@@ -8,6 +8,14 @@
 
 import HealthKit
 
+struct HealthKitStoreMock {
+    private let healthKitStore: HKHealthStore!
+    
+    init(healthKitStore: HKHealthStore) {
+        self.healthKitStore = HKHealthStore()
+    }
+}
+
 struct ProfileDataStore {
     
     private let healthKitStore: HKHealthStore!
@@ -62,8 +70,10 @@ struct ProfileDataStore {
     }
     
     func getQuantityType(for healthSample: HealthIdentifiers, completion: @escaping (_ stepRetrieved: Double) -> Void) {
-        guard   let type = HKSampleType.quantityType(forIdentifier: healthSample.identifier),
-                let startDate = UserDefaults.Adidas.get(key: .date) else {
+
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+        guard let startDate = calendar?.startOfDay(for: Date()),
+              let type = HKSampleType.quantityType(forIdentifier: healthSample.identifier)else {
             return
         }
 
