@@ -9,9 +9,9 @@
 import Foundation
 import HealthKit
 
-struct WorkoutDataStore {
+struct WorkoutDataStore: WorkoutDataStoreProtocol {
     
-    let healthStore: HKHealthStore!
+    private let healthStore: HKHealthStore!
     
     init(healthStore: HKHealthStore) {
         self.healthStore = healthStore
@@ -56,13 +56,11 @@ struct WorkoutDataStore {
     }
     
     private func samples(for workout: Workout) -> [HKSample] {
-        //1. Verify that the energy quantity type is still available to HealthKit.
         guard let energyQuantityType = HKSampleType.quantityType(
             forIdentifier: .activeEnergyBurned) else {
                 fatalError("*** Energy Burned Type Not Available ***")
         }
         
-        //2. Create a sample for each workoutInterval
         let samples: [HKSample] = workout.intervals.map { interval in
             let calorieQuantity = HKQuantity(unit: .kilocalorie(),
                                              doubleValue: interval.totalEnergyBurned)
@@ -79,10 +77,8 @@ struct WorkoutDataStore {
     func load(completion: @escaping ([HKWorkout]?, Error?) -> Void) {
         let workoutPredicate = HKQuery.predicateForWorkouts(with: .running)
         
-        //2. Get all workouts that only came from this app.
         let sourcePredicate = HKQuery.predicateForObjects(from: .default())
         
-        //3. Combine the predicates into a single predicate.
         let compound = NSCompoundPredicate(andPredicateWithSubpredicates:
             [workoutPredicate, sourcePredicate])
         

@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 
-final class WorkoutService {
+final class WorkoutService: WorkoutServiceProtocol {
     
     private var workoutDataStore: WorkoutDataStore!
     private var workoutSession: WorkoutSession!
@@ -39,6 +39,13 @@ final class WorkoutService {
         return workoutSession.state
     }
     
+    func clearSession() {
+        workoutSession.clear()
+    }
+}
+
+extension WorkoutService {
+
     func saveWorkout(onSuccess: @escaping () -> Void, onFailure: @escaping () -> Void) {
         guard let workoutComplete = workoutSession.completeWorkout else {
             return
@@ -62,12 +69,9 @@ final class WorkoutService {
                 onFailure(error)
                 return
             }
-                
+            
             onSuccess(workouts)
         }
     }
-    
-    func clearSession() {
-        workoutSession.clear()
-    }
+
 }

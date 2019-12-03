@@ -8,18 +8,13 @@
 
 import HealthKit
 
-protocol HealthKitProtocol {
-    var profileDataStore: ProfileDataStore { get }
-    func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Void)
-}
-
 fileprivate enum HealthkitSetupError: Error {
     case notAvailableOnDevice
     case dataTypeNotAvailable
 }
 
 final class HealthKithService: HealthKitProtocol {
-    var profileDataStore: ProfileDataStore
+    private var profileDataStore: ProfileDataStore
     
     init(profileDataStore: ProfileDataStore) {
         self.profileDataStore = profileDataStore
