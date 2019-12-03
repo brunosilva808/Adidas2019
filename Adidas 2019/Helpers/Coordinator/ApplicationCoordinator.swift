@@ -19,7 +19,7 @@ class ApplicationCoordinator: Coordinator {
         rootViewController = UINavigationController()
         rootViewController.view.backgroundColor = .white
         
-        let viewController = EntryViewController()
+        let viewController = EntryViewController(style: .grouped)
         viewController.coordinator = self
         rootViewController.pushViewController(viewController, animated: false)
     }
@@ -54,7 +54,8 @@ class ApplicationCoordinator: Coordinator {
     }
     
     func pushHomeViewController() {
-        let viewController = UserProfileViewController()
+        let userHealthProfile: UserHealthProfile = UserHealthProfile()
+        let viewController = UserProfileViewController(style: .grouped, userHealthProfile: userHealthProfile)
         viewController.coordinator = self
         
         rootViewController.pushViewController(viewController, animated: true)

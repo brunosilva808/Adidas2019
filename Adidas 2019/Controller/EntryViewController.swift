@@ -15,6 +15,14 @@ class EntryViewController: StaticTableController {
     private var goalsTableCell: UITableViewCell!
     private var profileTableCell: UITableViewCell!
     
+    override init(style: UITableView.Style) {
+        super.init(style: style)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,7 +30,6 @@ class EntryViewController: StaticTableController {
     }
     
     fileprivate func setupTableViewAndCells() {
-        tableView = UITableView(frame: .zero, style: .grouped)
         
         goalsTableCell = UITableViewCell()
         goalsTableCell.textLabel?.text = "Goals"

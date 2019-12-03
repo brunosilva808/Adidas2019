@@ -20,6 +20,16 @@ class UserProfileViewController: StaticTableController {
     private var cellMassIndex: UITableViewCell!
     private lazy var dispatchGroup = DispatchGroup()
     
+    init(style: UITableView.Style, userHealthProfile: UserHealthProfile) {
+        super.init(style: style)
+        
+        self.userHealthProfile = userHealthProfile
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     deinit {
         coordinator = nil
         userHealthProfile = nil
@@ -29,12 +39,11 @@ class UserProfileViewController: StaticTableController {
         super.viewDidLoad()
 
         setupTableViewAndCells()
+        populateCells()
         getUserHealthProfile()
     }
 
-    fileprivate func setupTableViewAndCells() {
-        tableView = UITableView(frame: view.frame, style: .grouped)
-        
+    fileprivate func setupTableViewAndCells() {        
         cellAge = UITableViewCell()
         cellHeight = UITableViewCell()
         cellBiologicalSex = UITableViewCell()
@@ -42,10 +51,23 @@ class UserProfileViewController: StaticTableController {
         cellBloodType = UITableViewCell()
         cellMassIndex = UITableViewCell()
         
-        let tableSectionData1 = TableSectionData(rows: [cellAge, cellHeight, cellWeigth, cellBiologicalSex, cellBloodType])
+        let tableSectionData1 = TableSectionData(rows: [cellAge,
+                                                        cellHeight,
+                                                        cellWeigth,
+                                                        cellBiologicalSex,
+                                                        cellBloodType])
         cells.append(tableSectionData1)
         let tableSectionData2 = TableSectionData(rows: [cellMassIndex])
         cells.append(tableSectionData2)
+    }
+    
+    fileprivate func populateCells() {
+        cellAge.textLabel?.text = userHealthProfile.ageAsString
+        cellBloodType.textLabel?.text = userHealthProfile.bloodTypeAsString
+        cellWeigth.textLabel?.text = userHealthProfile.weightAsString
+        cellHeight.textLabel?.text = userHealthProfile.heightAsString
+        cellBiologicalSex.textLabel?.text = userHealthProfile.biologicalSexAsString
+        cellMassIndex.textLabel?.text = userHealthProfile.bodyMassIndexAsString
     }
     
     fileprivate func getUserHealthProfile() {
@@ -66,12 +88,7 @@ class UserProfileViewController: StaticTableController {
             }
             
             dispatchGroup.notify(queue: .main) {
-                self?.cellAge.textLabel?.text = self?.userHealthProfile.ageAsString
-                self?.cellBloodType.textLabel?.text = self?.userHealthProfile.bloodTypeAsString
-                self?.cellWeigth.textLabel?.text = self?.userHealthProfile.weightAsString
-                self?.cellHeight.textLabel?.text = self?.userHealthProfile.heightAsString
-                self?.cellBiologicalSex.textLabel?.text = self?.userHealthProfile.biologicalSexAsString
-                self?.cellMassIndex.textLabel?.text = self?.userHealthProfile.bodyMassIndexAsString
+                self?.populateCells()
             }
         })
     }

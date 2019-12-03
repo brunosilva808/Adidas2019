@@ -43,7 +43,6 @@ class WorkoutViewController: StaticTableController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-//        tableView = UITableView(frame: view.frame, style: .grouped)
         setupCells()
     }
     
