@@ -38,9 +38,9 @@ final class URLSessionProvider: ProviderProtocol {
         switch response.statusCode {
         case 200...299:
             guard let parsedData = data, let model = try? JSONDecoder().decode(T.self, from: parsedData) else {
-                if let text = String(bytes: data!, encoding: .utf8) {
-                    print()
-                }
+//                if let text = String(bytes: data!, encoding: .utf8) {
+//                    print()
+//                }
 
                 return completion(.failure(.unknown))
             }

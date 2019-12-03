@@ -45,6 +45,26 @@ struct UserHealthProfile {
             }
         }
     }
+
+    var heightAsString: String? {
+        get {
+            if let height = self.heightInMeters {
+                return "Height: \(height)m"
+            } else {
+                return "Height: -"
+            }
+        }
+    }
+
+    var weightAsString: String? {
+        get {
+            if let weight = self.weightInKilograms {
+                return "Weight: \(weight)kg"
+            } else {
+                return "Weight: -"
+            }
+        }
+    }
     
     var bodyMassIndex: Double? {
         
@@ -55,6 +75,16 @@ struct UserHealthProfile {
         }
         
         return (weightInKilograms/(heightInMeters*heightInMeters))
+    }
+    
+    var bodyMassIndexAsString: String? {
+        get {
+            if let bodyMassIndex = self.bodyMassIndex {
+                return String(format: "BMI: %0.2f", bodyMassIndex)
+            } else {
+                return "BMI: -"
+            }
+        }
     }
 
 }

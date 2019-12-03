@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import HealthKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var applicationCoordinator: ApplicationCoordinator?
+    var healthKitService: HealthKithService!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        InitializerManager().initialize(components: [.healthKitService, .app])
         initRootViewController()
         
         return true

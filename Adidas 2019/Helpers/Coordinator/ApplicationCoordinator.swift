@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class ApplicationCoordinator: Coordinator {
     internal var childCoordinators: [Coordinator] = []
@@ -18,14 +19,14 @@ class ApplicationCoordinator: Coordinator {
         rootViewController = UINavigationController()
         rootViewController.view.backgroundColor = .white
         
-        let urlSessionProvider = URLSessionProvider()
-        let service = Service(sessionProvider: urlSessionProvider)
-        let profileDataStore = ProfileDataStore()
-        let healthKitManager = HealthKithService(profileDataStore: profileDataStore)
-        let viewController = ViewController(service: service, healthKitManager: healthKitManager)
+        let viewController = EntryViewController(style: .grouped)
         viewController.coordinator = self
-
         rootViewController.pushViewController(viewController, animated: false)
+    }
+    
+    func getService() -> Service {
+        let urlSessionProvider = URLSessionProvider()
+        return Service(sessionProvider: urlSessionProvider)
     }
     
     func start() {
@@ -33,10 +34,39 @@ class ApplicationCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
-    func pushGoalViewController() {
-        let goalViewController = GoalViewController()
+    func pushStepsViewController() {
+        let service = getService()
+        let viewController = StepsViewController(service: service)
+        viewController.coordinator = self
+        
+        rootViewController.pushViewController(viewController, animated: true)
+    }
+    
+    func pushGoalViewController(goal: Goal) {
+        let goalViewController = GoalViewController(goal: goal)
         goalViewController.coordinator = self
+        
         rootViewController.pushViewController(goalViewController, animated: true)
+    }
+    
+    func pushHomeViewController() {
+        let userHealthProfile: UserHealthProfile = UserHealthProfile()
+        let viewController = UserProfileViewController(style: .grouped, userHealthProfile: userHealthProfile)
+        viewController.coordinator = self
+        
+        rootViewController.pushViewController(viewController, animated: true)
+    }
+    
+    func pushWorkoutViewController() {
+        let healthStore = HKHealthStore()
+        let workoutDataStore = WorkoutDataStore(healthStore: healthStore)
+        let workoutSession = WorkoutSession()
+        let workoutService: WorkoutService = WorkoutService(workoutDataStore: workoutDataStore,
+                                                            workoutSession: workoutSession)
+        let workoutViewController = WorkoutViewController(workoutService: workoutService)
+        workoutViewController.coordinator = self
+        
+        rootViewController.pushViewController(workoutViewController, animated: true)
     }
     
     func popViewController() {
