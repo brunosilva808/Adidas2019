@@ -73,16 +73,6 @@ struct WorkoutDataStore {
                                                     end: interval.end)
         }
         
-//        let samples: [HKSample] = workout.intervals.map { interval in
-//            let calorieQuantity = HKQuantity(unit: .kilocalorie(),
-//                                             doubleValue: interval.totalEnergyBurned)
-//            
-//            return HKCumulativeQuantitySeriesSample(type: energyQuantityType,
-//                                                    quantity: calorieQuantity,
-//                                                    start: interval.start,
-//                                                    end: interval.end)
-//        }
-        
         return samples
     }
     

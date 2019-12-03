@@ -76,9 +76,7 @@ final class HealthKithService {
             userHealthProfile.age = userAgeSexAndBloodType.age
             userHealthProfile.biologicalSex = userAgeSexAndBloodType.biologicalSex
             userHealthProfile.bloodType = userAgeSexAndBloodType.bloodType
-        } catch {
-            print(error)
-        }
+        } catch {}
         
         onComplete(userHealthProfile)
     }
@@ -115,7 +113,6 @@ final class HealthKithService {
     func getMostRecentSampleDistanceWalkingRunning(onComplete: @escaping (Double?) -> Void) {
         
         guard let distanceSampleType = HKSampleType.quantityType(forIdentifier: .distanceWalkingRunning) else {
-            print("Distance Sample Type is no longer available in HealthKit")
             return
         }
         

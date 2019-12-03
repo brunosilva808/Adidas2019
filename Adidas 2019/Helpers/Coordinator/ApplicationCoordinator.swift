@@ -61,6 +61,18 @@ class ApplicationCoordinator: Coordinator {
         rootViewController.pushViewController(viewController, animated: true)
     }
     
+    func pushWorkoutViewController() {
+        let healthStore = HKHealthStore()
+        let workoutDataStore = WorkoutDataStore(healthStore: healthStore)
+        let workoutSession = WorkoutSession()
+        let workoutService: WorkoutService = WorkoutService(workoutDataStore: workoutDataStore,
+                                                            workoutSession: workoutSession)
+        let workoutViewController = WorkoutViewController(workoutService: workoutService)
+        workoutViewController.coordinator = self
+        
+        rootViewController.pushViewController(workoutViewController, animated: true)
+    }
+    
     func popViewController() {
         rootViewController.popViewController(animated: true)
     }

@@ -12,6 +12,7 @@ class EntryViewController: StaticTableController {
     
     weak var coordinator: ApplicationCoordinator?
     private var authorizeTableCell: AuthorizeTableCell!
+    private var workoutTableCell: UITableViewCell!
     private var goalsTableCell: UITableViewCell!
     private var profileTableCell: UITableViewCell!
     
@@ -31,6 +32,10 @@ class EntryViewController: StaticTableController {
     
     fileprivate func setupTableViewAndCells() {
         
+        workoutTableCell = UITableViewCell()
+        workoutTableCell.textLabel?.text = "Workout"
+        workoutTableCell.textLabel?.textAlignment = .center
+        
         goalsTableCell = UITableViewCell()
         goalsTableCell.textLabel?.text = "Goals"
         goalsTableCell.textLabel?.textAlignment = .center
@@ -45,6 +50,8 @@ class EntryViewController: StaticTableController {
         profileTableCell.textLabel?.text = "Profile"
         profileTableCell.textLabel?.textAlignment = .center
 
+        let tableSectionData0 = TableSectionData(rows: [workoutTableCell])
+        cells.append(tableSectionData0)
         let tableSectionData1 = TableSectionData(rows: [profileTableCell])
         cells.append(tableSectionData1)
         let tableSectionData2 = TableSectionData(rows: [goalsTableCell])
@@ -70,9 +77,12 @@ extension EntryViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            coordinator?.pushHomeViewController()
+            coordinator?.pushWorkoutViewController()
             break
         case 1:
+            coordinator?.pushHomeViewController()
+            break
+        case 2:
             coordinator?.pushStepsViewController()
         default:
             break

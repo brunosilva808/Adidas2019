@@ -11,6 +11,7 @@ import UIKit
 class ButtonTableCell: BaseCell {
     
     private var button: UIButton!
+    private var isWorkingOut = false
     var onButtonTouch: (() -> Void)?
     
     override func setupUIComponents() {
@@ -24,8 +25,8 @@ class ButtonTableCell: BaseCell {
     }
     
     @objc func startWorkout() {
-        button.isSelected = !button.isSelected
-        if button.isSelected {
+        isWorkingOut = !isWorkingOut
+        if isWorkingOut {
             button.setTitleColor(.red, for: .normal)
             button.setTitle("Stop Workout", for: .normal)
         } else {

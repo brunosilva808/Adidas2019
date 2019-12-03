@@ -12,7 +12,7 @@ class TimeTableCell: BaseCell {
     
     private var labelTime: UILabel!
     private var timer: Timer!
-    private var workoutSession: WorkoutSession!
+    private var workoutService: WorkoutService!
     private lazy var startTimeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
@@ -26,9 +26,10 @@ class TimeTableCell: BaseCell {
         return formatter
     }()
     
-    init(workoutSession: WorkoutSession) {
+    init(workoutService: WorkoutService) {
         super.init(style: .default, reuseIdentifier: "timeTableCell")
-        self.workoutSession = workoutSession
+
+        self.workoutService = workoutService
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -62,12 +63,12 @@ class TimeTableCell: BaseCell {
     }
     
     func updateLabels() {
-        switch workoutSession.state {
+        switch workoutService.workoutState() {
         case .active:
-            let duration = Date().timeIntervalSince(workoutSession.startDate)
+            let duration = Date().timeIntervalSince(workoutService.workoutStartDate())
             labelTime.text = durationFormatter.string(from: duration)
         case .finished:
-            let duration = workoutSession.endDate.timeIntervalSince(workoutSession.startDate)
+            let duration = workoutService.workoutEndDate().timeIntervalSince(workoutService.workoutStartDate())
             labelTime.text = durationFormatter.string(from: duration)
             timer = nil
         default:
